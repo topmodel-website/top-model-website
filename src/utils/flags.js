@@ -1,0 +1,73 @@
+export const getFlag = (countryName) => {
+    if (!countryName) return '';
+
+    const flags = {
+        "Turkey": "🇹🇷",
+        "Türkiye": "🇹🇷",
+        "Belgium": "🇧🇪",
+        "Azerbaijan": "🇦🇿",
+        "Thailand": "🇹🇭",
+        "France": "🇫🇷",
+        "Tanzania": "🇹🇿",
+        "Bulgaria": "🇧🇬",
+        "Mexico": "🇲🇽",
+        "Venezuela": "🇻🇪",
+        "Netherlands": "🇳🇱",
+        "Ukraine": "🇺🇦",
+        "India": "🇮🇳",
+        "North Cyprus": "🇨🇾", // Using Cyprus flag as North Cyprus specific emoji doesn't exist standardly
+        "Philippines": "🇵🇭",
+        "Germany": "🇩🇪",
+        "Georgia": "🇬🇪",
+        "Albania": "🇦🇱",
+        "Sierra Leone": "🇸🇱",
+        "Suriname": "🇸🇷",
+        "Italy": "🇮🇹",
+        "Serbia": "🇷🇸",
+        "Morocco": "🇲🇦",
+        "Democratic Congo": "🇨🇩",
+        "Russia": "🇷🇺",
+        "Spain": "🇪🇸",
+        "USA": "🇺🇸",
+        "Brazil": "🇧🇷",
+        "Argentina": "🇦🇷",
+        "Colombia": "🇨🇴",
+        "Peru": "🇵🇪",
+        "China": "🇨🇳",
+        "Japan": "🇯🇵",
+        "South Korea": "🇰🇷",
+        "Vietnam": "🇻🇳",
+        "Indonesia": "🇮🇩",
+        "Malaysia": "🇲🇾",
+        "Singapore": "🇸🇬",
+        "Australia": "🇦🇺",
+        "New Zealand": "🇳🇿",
+        "South Africa": "🇿🇦",
+        "Egypt": "🇪🇬",
+        "Nigeria": "🇳🇬",
+        "Kenya": "🇰🇪",
+        "Ghana": "🇬🇭",
+        "Canada": "🇨🇦",
+        "United Kingdom": "🇬🇧",
+        "Sweden": "🇸🇪",
+        "Norway": "🇳🇴",
+        "Denmark": "🇩🇰",
+        "Finland": "🇫🇮",
+        "Poland": "🇵🇱",
+        "Greece": "🇬🇷",
+        "Portugal": "🇵🇹",
+        "Switzerland": "🇨🇭",
+        "Austria": "🇦🇹",
+        "Czech Republic": "🇨🇿",
+        "Hungary": "🇭🇺",
+        "Romania": "🇷🇴"
+    };
+
+    // Normalize input to Title Case or match keys
+    // Simple lookup first
+    if (flags[countryName]) return flags[countryName];
+
+    // Try to find case-insensitive match
+    const key = Object.keys(flags).find(k => k.toLowerCase() === countryName.toLowerCase());
+    return key ? flags[key] : '🏳️'; // Default white flag if not found
+};
