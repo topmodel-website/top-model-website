@@ -12,7 +12,7 @@ export const turkiyeData = [
             men: [
                 { name: "Umut Öksüz", country: "Turkey" },
                 { name: "Mert Yalçın", country: "Turkey" },
-                { name: "M Burak Yılmazçetin", country: "Turkey" },
+                { name: "M. Burak Yılmazçetin", country: "Turkey" },
                 { name: "Taha Alper Aslaner", country: "Turkey" },
                 { name: "Ateş Ergün", country: "Turkey" }
             ],
@@ -31,13 +31,34 @@ export const turkiyeData = [
         date: "2024",
         hosts: "Esin Yum & Şenol İpek",
         winners: [
-            { title: "Winner", name: "Mehmet Borne", country: "Turkey" },
-            { title: "Winner", name: "TBD", country: "Turkey" }
+            { title: "Winner", name: "İrem Cannur Özgen", country: "Turkey" },
+            { title: "Winner", name: "Mehmet Borneo", country: "Turkey" }
         ],
         top5: {
-            men: [],
-            women: []
-        }
+            men: [
+                { name: "Mehmet Borneo", country: "Turkey" },
+                { name: "Celal Tuğberk Kuzey", country: "Turkey" },
+                { name: "Can Gündoğan", country: "Turkey" },
+                { name: "Can Ün", country: "Turkey" },
+                { name: "Can Celiloğlu", country: "Turkey" }
+            ],
+            women: [
+                { name: "İrem Cannur Özgen", country: "Turkey" },
+                { name: "Mine Balım Bingül", country: "Turkey" },
+                { name: "Gülben Güven", country: "Turkey" },
+                { name: "Nurbanu Esen", country: "Turkey" },
+                { name: "Mine Yılmaz", country: "Turkey" }
+            ]
+        },
+        mentions: [
+            { title: "Top Face", names: ["Yasemin Yılmaz", "Furkan Kocayığit"] },
+            { title: "Top Catwalk", names: ["Gülben Güven", "Hüseyin Özkan"] },
+            { title: "Top Fotomodel", names: ["Tutku Akbayrak", "Tamer Taylan Ayvalı"] },
+            { title: "Top Charm", names: ["Aylin Şakacı", "Emre Sarıtaş"] },
+            { title: "Top Fizik", names: ["İrem Cannur Özgen", "Anıl Erkin Zeray"] },
+            { title: "Top Popülarite (Halk Oyu)", names: ["Dicle Demir", "Muhammed Helli"] },
+            { title: "Top Model EuroTurk", names: ["Rabiha Şahan", "Can Tıraş"] }
+        ]
     },
     {
         year: 2023,
@@ -45,7 +66,7 @@ export const turkiyeData = [
         date: "2023",
         hosts: "Bircan Bali & Mehmet Yıldırım",
         winners: [
-            { title: "Winner", name: "Beste Viran", country: "Turkey" },
+            { title: "Winner", name: "Beste Tuğçe Viran", country: "Turkey" },
             { title: "Winner", name: "Çağrı Baylan", country: "Turkey" }
         ],
         top5: {

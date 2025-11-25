@@ -74,40 +74,41 @@ const YearSection = ({ data }) => {
                     </div>
                 </div>
 
-                {/* Main Winners */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
-                    {winners.map((winner, index) => (
-                        <WinnerCard key={index} {...winner} />
-                    ))}
-                </div>
-
-                {/* Top 5 Lists */}
+                {/* Winners & Top 5 Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-                    {top5.men && (
-                        <div className="bg-white/5 p-8 rounded-xl border border-white/10">
-                            <h3 className="text-2xl font-serif text-gold mb-6 flex items-center">
-                                <Award className="w-6 h-6 mr-2" /> {t('yearSection.top5Men')}
-                            </h3>
-                            <ul className="space-y-2">
-                                {top5.men.map((item, idx) => (
-                                    <ListItem key={idx} rank={idx + 1} {...item} />
-                                ))}
-                            </ul>
-                        </div>
-                    )}
+                    {/* Women's Column */}
+                    <div className="flex flex-col gap-8">
+                        {winners[0] && <WinnerCard {...winners[0]} />}
+                        {top5.women && top5.women.length > 0 && (
+                            <div className="bg-white/5 p-8 rounded-xl border border-white/10 h-full">
+                                <h3 className="text-2xl font-serif text-gold mb-6 flex items-center">
+                                    <Award className="w-6 h-6 mr-2" /> {t('yearSection.top5Women')}
+                                </h3>
+                                <ul className="space-y-2">
+                                    {top5.women.map((item, idx) => (
+                                        <ListItem key={idx} rank={idx + 1} {...item} />
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                    </div>
 
-                    {top5.women && (
-                        <div className="bg-white/5 p-8 rounded-xl border border-white/10">
-                            <h3 className="text-2xl font-serif text-gold mb-6 flex items-center">
-                                <Award className="w-6 h-6 mr-2" /> {t('yearSection.top5Women')}
-                            </h3>
-                            <ul className="space-y-2">
-                                {top5.women.map((item, idx) => (
-                                    <ListItem key={idx} rank={idx + 1} {...item} />
-                                ))}
-                            </ul>
-                        </div>
-                    )}
+                    {/* Men's Column */}
+                    <div className="flex flex-col gap-8">
+                        {winners[1] && <WinnerCard {...winners[1]} />}
+                        {top5.men && top5.men.length > 0 && (
+                            <div className="bg-white/5 p-8 rounded-xl border border-white/10 h-full">
+                                <h3 className="text-2xl font-serif text-gold mb-6 flex items-center">
+                                    <Award className="w-6 h-6 mr-2" /> {t('yearSection.top5Men')}
+                                </h3>
+                                <ul className="space-y-2">
+                                    {top5.men.map((item, idx) => (
+                                        <ListItem key={idx} rank={idx + 1} {...item} />
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                    </div>
                 </div>
 
                 {/* Mentions / Special Awards */}

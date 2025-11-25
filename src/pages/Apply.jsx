@@ -10,15 +10,26 @@ import KvkkModal from '../components/KvkkModal';
 const Apply = () => {
     const { t } = useTranslation();
     const [formData, setFormData] = useState({
-        name: '',
-        surname: '',
-        gender: '',
-        birthDate: '',
+        nameSurname: '',
+        age: '',
         height: '',
         weight: '',
+        education: '',
+        city: '',
+        instagram: '',
+        tshirtSize: '',
+        swimsuitSize: '',
+        shoeSize: '',
+        hasPassport: '',
+        passportExpiry: '',
+        hasExperience: '',
+        experience: '',
+        hasAgency: '',
+        agency: '',
+        hasPastContests: '',
+        pastContests: '',
         phone: '',
         email: '',
-        instagram: '',
         kvkkAccepted: false
     });
     const [photos, setPhotos] = useState([]);
@@ -33,7 +44,7 @@ const Apply = () => {
 
     const handleFileChange = async (e) => {
         const files = Array.from(e.target.files);
-        if (files.length + photos.length > 3) {
+        if (files.length + photos.length > 4) {
             alert(t('apply.messages.maxPhotos'));
             return;
         }
@@ -117,7 +128,7 @@ const Apply = () => {
         setLoading(true);
         setStatus({ type: '', message: '' });
 
-        if (photos.length === 0) {
+        if (photos.length !== 4) {
             setStatus({ type: 'error', message: t('apply.messages.minPhoto') });
             setLoading(false);
             return;
@@ -138,12 +149,13 @@ const Apply = () => {
             });
 
             // Send Confirmation Email
-            await sendConfirmationEmail(formData.email, `${formData.name} ${formData.surname}`);
+            await sendConfirmationEmail(formData.email, formData.nameSurname);
 
             setStatus({ type: 'success', message: t('apply.messages.success') });
             setFormData({
-                name: '', surname: '', gender: '', birthDate: '', height: '', weight: '',
-                phone: '', email: '', instagram: '', kvkkAccepted: false
+                nameSurname: '', age: '', height: '', weight: '', education: '', city: '',
+                instagram: '', tshirtSize: '', swimsuitSize: '', shoeSize: '', passportExpiry: '',
+                experience: '', agency: '', pastContests: '', phone: '', email: '', kvkkAccepted: false
             });
             setPhotos([]);
         } catch (error) {
@@ -187,55 +199,26 @@ const Apply = () => {
                     )}
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        {/* Name */}
-                        <div>
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.name')}</label>
+                        {/* Name Surname */}
+                        <div className="md:col-span-2">
+                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.nameSurname')}</label>
                             <input
                                 type="text"
-                                name="name"
-                                value={formData.name}
+                                name="nameSurname"
+                                value={formData.nameSurname}
                                 onChange={handleChange}
                                 required
                                 className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
                             />
                         </div>
 
-                        {/* Surname */}
+                        {/* Age */}
                         <div>
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.surname')}</label>
+                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.age')}</label>
                             <input
-                                type="text"
-                                name="surname"
-                                value={formData.surname}
-                                onChange={handleChange}
-                                required
-                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                            />
-                        </div>
-
-                        {/* Gender */}
-                        <div>
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.gender')}</label>
-                            <select
-                                name="gender"
-                                value={formData.gender}
-                                onChange={handleChange}
-                                required
-                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors appearance-none"
-                            >
-                                <option value="" disabled>{t('apply.form.selectGender')}</option>
-                                <option value="Female">{t('apply.form.female')}</option>
-                                <option value="Male">{t('apply.form.male')}</option>
-                            </select>
-                        </div>
-
-                        {/* Birth Date */}
-                        <div>
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.birthDate')}</label>
-                            <input
-                                type="date"
-                                name="birthDate"
-                                value={formData.birthDate}
+                                type="number"
+                                name="age"
+                                value={formData.age}
                                 onChange={handleChange}
                                 required
                                 className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
@@ -270,6 +253,54 @@ const Apply = () => {
                             />
                         </div>
 
+                        {/* Education */}
+                        <div>
+                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.education')}</label>
+                            <select
+                                name="education"
+                                value={formData.education}
+                                onChange={handleChange}
+                                required
+                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors appearance-none"
+                            >
+                                <option value="" disabled>{t('apply.form.educationOptions.placeholder')}</option>
+                                <option value="Ilköğretim">{t('apply.form.educationOptions.primary')}</option>
+                                <option value="Lise">{t('apply.form.educationOptions.highSchool')}</option>
+                                <option value="Ön Lisans">{t('apply.form.educationOptions.associate')}</option>
+                                <option value="Lisans">{t('apply.form.educationOptions.bachelor')}</option>
+                                <option value="Yüksek Lisans">{t('apply.form.educationOptions.master')}</option>
+                                <option value="Doktora">{t('apply.form.educationOptions.phd')}</option>
+                                <option value="Diğer">{t('apply.form.educationOptions.other')}</option>
+                            </select>
+                        </div>
+
+                        {/* City */}
+                        <div>
+                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.city')}</label>
+                            <input
+                                type="text"
+                                name="city"
+                                value={formData.city}
+                                onChange={handleChange}
+                                required
+                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                            />
+                        </div>
+
+                        {/* Instagram */}
+                        <div>
+                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.instagram')}</label>
+                            <input
+                                type="text"
+                                name="instagram"
+                                value={formData.instagram}
+                                onChange={handleChange}
+                                required
+                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                placeholder="@username"
+                            />
+                        </div>
+
                         {/* Phone */}
                         <div>
                             <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.phone')}</label>
@@ -298,18 +329,206 @@ const Apply = () => {
                             />
                         </div>
 
-                        {/* Instagram */}
-                        <div className="md:col-span-2">
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.instagram')}</label>
+                        {/* T-shirt Size */}
+                        <div>
+                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.tshirtSize')}</label>
                             <input
                                 type="text"
-                                name="instagram"
-                                value={formData.instagram}
+                                name="tshirtSize"
+                                value={formData.tshirtSize}
                                 onChange={handleChange}
                                 required
                                 className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                                placeholder="@username"
+                                placeholder="S, M, L..."
                             />
+                        </div>
+
+                        {/* Swimsuit Size */}
+                        <div>
+                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.swimsuitSize')}</label>
+                            <input
+                                type="text"
+                                name="swimsuitSize"
+                                value={formData.swimsuitSize}
+                                onChange={handleChange}
+                                required
+                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                placeholder="36, 38..."
+                            />
+                        </div>
+
+                        {/* Shoe Size */}
+                        <div>
+                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.shoeSize')}</label>
+                            <input
+                                type="number"
+                                name="shoeSize"
+                                value={formData.shoeSize}
+                                onChange={handleChange}
+                                required
+                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                placeholder="38"
+                            />
+                        </div>
+
+                        {/* Has Passport */}
+                        <div className="md:col-span-2">
+                            <label className="block text-gold text-sm font-bold mb-3 uppercase tracking-wider">{t('apply.form.hasPassport')}</label>
+                            <div className="flex space-x-8">
+                                {['yes', 'no'].map((option) => (
+                                    <label key={option} className="inline-flex items-center cursor-pointer group">
+                                        <div className={`relative flex items-center justify-center w-6 h-6 mr-3 border-2 rounded-full transition-all duration-300 ${formData.hasPassport === option ? 'border-gold bg-gold/10' : 'border-white/20 group-hover:border-gold/50'}`}>
+                                            <input
+                                                type="radio"
+                                                name="hasPassport"
+                                                value={option}
+                                                checked={formData.hasPassport === option}
+                                                onChange={handleChange}
+                                                className="absolute opacity-0 w-full h-full cursor-pointer"
+                                            />
+                                            <div className={`w-2.5 h-2.5 rounded-full bg-gold transform transition-transform duration-300 ${formData.hasPassport === option ? 'scale-100' : 'scale-0'}`} />
+                                        </div>
+                                        <span className={`text-base transition-colors duration-300 ${formData.hasPassport === option ? 'text-white font-medium' : 'text-gray-400 group-hover:text-white'}`}>
+                                            {t(`apply.form.${option}`)}
+                                        </span>
+                                    </label>
+                                ))}
+                            </div>
+
+                            {/* Passport Expiry - Conditional */}
+                            {formData.hasPassport === 'yes' && (
+                                <div className="mt-4">
+                                    <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.passportExpiry')}</label>
+                                    <input
+                                        type="text"
+                                        name="passportExpiry"
+                                        value={formData.passportExpiry}
+                                        onChange={handleChange}
+                                        required={formData.hasPassport === 'yes'}
+                                        className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                        placeholder="2028"
+                                    />
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Has Experience */}
+                        <div className="md:col-span-2">
+                            <label className="block text-gold text-sm font-bold mb-3 uppercase tracking-wider">{t('apply.form.hasExperience')}</label>
+                            <div className="flex space-x-8">
+                                {['yes', 'no'].map((option) => (
+                                    <label key={option} className="inline-flex items-center cursor-pointer group">
+                                        <div className={`relative flex items-center justify-center w-6 h-6 mr-3 border-2 rounded-full transition-all duration-300 ${formData.hasExperience === option ? 'border-gold bg-gold/10' : 'border-white/20 group-hover:border-gold/50'}`}>
+                                            <input
+                                                type="radio"
+                                                name="hasExperience"
+                                                value={option}
+                                                checked={formData.hasExperience === option}
+                                                onChange={handleChange}
+                                                className="absolute opacity-0 w-full h-full cursor-pointer"
+                                            />
+                                            <div className={`w-2.5 h-2.5 rounded-full bg-gold transform transition-transform duration-300 ${formData.hasExperience === option ? 'scale-100' : 'scale-0'}`} />
+                                        </div>
+                                        <span className={`text-base transition-colors duration-300 ${formData.hasExperience === option ? 'text-white font-medium' : 'text-gray-400 group-hover:text-white'}`}>
+                                            {t(`apply.form.${option}`)}
+                                        </span>
+                                    </label>
+                                ))}
+                            </div>
+
+                            {/* Experience - Conditional */}
+                            {formData.hasExperience === 'yes' && (
+                                <div className="mt-4">
+                                    <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.experience')}</label>
+                                    <textarea
+                                        name="experience"
+                                        value={formData.experience}
+                                        onChange={handleChange}
+                                        required={formData.hasExperience === 'yes'}
+                                        className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors h-24 resize-none"
+                                    />
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Has Agency */}
+                        <div className="md:col-span-2">
+                            <label className="block text-gold text-sm font-bold mb-3 uppercase tracking-wider">{t('apply.form.hasAgency')}</label>
+                            <div className="flex space-x-8">
+                                {['yes', 'no'].map((option) => (
+                                    <label key={option} className="inline-flex items-center cursor-pointer group">
+                                        <div className={`relative flex items-center justify-center w-6 h-6 mr-3 border-2 rounded-full transition-all duration-300 ${formData.hasAgency === option ? 'border-gold bg-gold/10' : 'border-white/20 group-hover:border-gold/50'}`}>
+                                            <input
+                                                type="radio"
+                                                name="hasAgency"
+                                                value={option}
+                                                checked={formData.hasAgency === option}
+                                                onChange={handleChange}
+                                                className="absolute opacity-0 w-full h-full cursor-pointer"
+                                            />
+                                            <div className={`w-2.5 h-2.5 rounded-full bg-gold transform transition-transform duration-300 ${formData.hasAgency === option ? 'scale-100' : 'scale-0'}`} />
+                                        </div>
+                                        <span className={`text-base transition-colors duration-300 ${formData.hasAgency === option ? 'text-white font-medium' : 'text-gray-400 group-hover:text-white'}`}>
+                                            {t(`apply.form.${option}`)}
+                                        </span>
+                                    </label>
+                                ))}
+                            </div>
+
+                            {/* Agency - Conditional */}
+                            {formData.hasAgency === 'yes' && (
+                                <div className="mt-4">
+                                    <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.agency')}</label>
+                                    <input
+                                        type="text"
+                                        name="agency"
+                                        value={formData.agency}
+                                        onChange={handleChange}
+                                        required={formData.hasAgency === 'yes'}
+                                        className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                    />
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Has Past Contests */}
+                        <div className="md:col-span-2">
+                            <label className="block text-gold text-sm font-bold mb-3 uppercase tracking-wider">{t('apply.form.hasPastContests')}</label>
+                            <div className="flex space-x-8">
+                                {['yes', 'no'].map((option) => (
+                                    <label key={option} className="inline-flex items-center cursor-pointer group">
+                                        <div className={`relative flex items-center justify-center w-6 h-6 mr-3 border-2 rounded-full transition-all duration-300 ${formData.hasPastContests === option ? 'border-gold bg-gold/10' : 'border-white/20 group-hover:border-gold/50'}`}>
+                                            <input
+                                                type="radio"
+                                                name="hasPastContests"
+                                                value={option}
+                                                checked={formData.hasPastContests === option}
+                                                onChange={handleChange}
+                                                className="absolute opacity-0 w-full h-full cursor-pointer"
+                                            />
+                                            <div className={`w-2.5 h-2.5 rounded-full bg-gold transform transition-transform duration-300 ${formData.hasPastContests === option ? 'scale-100' : 'scale-0'}`} />
+                                        </div>
+                                        <span className={`text-base transition-colors duration-300 ${formData.hasPastContests === option ? 'text-white font-medium' : 'text-gray-400 group-hover:text-white'}`}>
+                                            {t(`apply.form.${option}`)}
+                                        </span>
+                                    </label>
+                                ))}
+                            </div>
+
+                            {/* Past Contests - Conditional */}
+                            {formData.hasPastContests === 'yes' && (
+                                <div className="mt-4">
+                                    <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.pastContests')}</label>
+                                    <input
+                                        type="text"
+                                        name="pastContests"
+                                        value={formData.pastContests}
+                                        onChange={handleChange}
+                                        required={formData.hasPastContests === 'yes'}
+                                        className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                    />
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -324,7 +543,7 @@ const Apply = () => {
                                 onChange={handleFileChange}
                                 accept="image/*"
                                 multiple
-                                disabled={photos.length >= 3}
+                                disabled={photos.length >= 4}
                                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer disabled:cursor-not-allowed"
                             />
                             <div className="flex flex-col items-center justify-center">
@@ -336,7 +555,7 @@ const Apply = () => {
 
                         {/* Photo Previews */}
                         {photos.length > 0 && (
-                            <div className="mt-4 grid grid-cols-3 gap-4">
+                            <div className="mt-4 grid grid-cols-4 gap-4">
                                 {photos.map((photo, index) => (
                                     <div key={index} className="relative aspect-square rounded-lg overflow-hidden border border-gold/20">
                                         <img src={photo} alt={`Preview ${index}`} className="w-full h-full object-cover" />
@@ -397,8 +616,8 @@ const Apply = () => {
                         </button>
                     </div>
                 </motion.form>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 

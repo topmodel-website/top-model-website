@@ -60,7 +60,23 @@ export const getFlag = (countryName) => {
         "Austria": "🇦🇹",
         "Czech Republic": "🇨🇿",
         "Hungary": "🇭🇺",
-        "Romania": "🇷🇴"
+        "Romania": "🇷🇴",
+        // Turkish Mappings
+        "Fas": "🇲🇦",
+        "Demokratik Kongo": "🇨🇩",
+        "Filipinler": "🇵🇭",
+        "Hindistan": "🇮🇳",
+        "Hollanda": "🇳🇱",
+        "Rusya": "🇷🇺",
+        "Sırbistan": "🇷🇸",
+        "Kuzey Kıbrıs": "🇨🇾",
+        "Azerbaycan": "🇦🇿",
+        "Gürcistan": "🇬🇪",
+        "İtalya": "🇮🇹",
+        "Ukrayna": "🇺🇦",
+        "Tayland": "🇹🇭",
+        "Almanya": "🇩🇪",
+        "Arnavutluk": "🇦🇱"
     };
 
     // Normalize input to Title Case or match keys
