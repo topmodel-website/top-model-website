@@ -10,20 +10,34 @@ export const turkiyeData = [
         ],
         top5: {
             men: [
-                { name: "Umut Öksüz", country: "Turkey" },
-                { name: "Mert Yalçın", country: "Turkey" },
-                { name: "M. Burak Yılmazçetin", country: "Turkey" },
-                { name: "Taha Alper Aslaner", country: "Turkey" },
-                { name: "Ateş Ergün", country: "Turkey" }
+                { name: "Umut Öksüz", country: "Turkey", title: "Winner" },
+                { name: "Mert Yalçın", country: "Turkey", title: "1st Runner Up" },
+                { name: "M. Burak Yılmazçetin", country: "Turkey", title: "2nd Runner Up" },
+                { name: "Taha Alper Aslaner", country: "Turkey", title: "3rd Runner Up" },
+                { name: "Ateş Ergün", country: "Turkey", title: "4th Runner Up" }
             ],
             women: [
-                { name: "Ella Yalaz", country: "Turkey" },
-                { name: "Sibel Kaçan", country: "Turkey" },
-                { name: "Arife Demirci", country: "Turkey" },
-                { name: "Meltem Yerli", country: "Turkey" },
-                { name: "Aslı Gül", country: "Turkey" }
+                { name: "Ella Yalaz", country: "Turkey", title: "Winner" },
+                { name: "Sibel Kaçan", country: "Turkey", title: "1st Runner Up" },
+                { name: "Arife Demirci", country: "Turkey", title: "2nd Runner Up" },
+                { name: "Meltem Yerli", country: "Turkey", title: "3rd Runner Up" },
+                { name: "Aslı Gül", country: "Turkey", title: "4th Runner Up" }
             ]
-        }
+        },
+        mentions: [
+            { title: "Halk Oylaması (Winner)", names: ["Ella Yalaz", "Taha Alper Aslaner"] },
+            { title: "Halk Oylaması (1st Runner Up)", names: ["T. Sıla Binicioğlu", "Emin Yıldırım Ekingen", "Tan Eren Kırkyıldız"] },
+            { title: "Best Face (Winner)", names: ["Zeynep Dila Akgüner", "Rohat Oduncu"] },
+            { title: "Best Face (Runner Up)", names: ["Lara Rabia Ünal", "Atakan Aksu"] },
+            { title: "Best Physique (Winner)", names: ["Yağmur Yıldıran", "Yiğit Acet"] },
+            { title: "Best Physique (Runner Up)", names: ["Hanife Ezgi Dilek", "M. Burak Yılmazçetin"] },
+            { title: "Best Charm (Winner)", names: ["Sıla Binicioğlu", "Sefkan Can Kaymaz"] },
+            { title: "Best Charm (Runner Up)", names: ["Zeynep Dila Akgüner", "Efe Soykan"] },
+            { title: "Best Catwalk (Winner)", names: ["Meltem Yerli", "Ozan Sarımustafaoğlu"] },
+            { title: "Best Catwalk (Runner Up)", names: ["Arife Demirci", "Samet Bal"] },
+            { title: "Best Sinema Fotomodel (Winner)", names: ["Başak Aylin Cinel", "Oğuz Okçu"] },
+            { title: "Best Sinema Fotomodel (Runner Up)", names: ["Nisa Gürışık", "Selin Söylemezoğlu", "Rohan Ergün", "Yusuf Mukyan"] }
+        ]
     },
     {
         year: 2024,
@@ -36,18 +50,18 @@ export const turkiyeData = [
         ],
         top5: {
             men: [
-                { name: "Mehmet Borneo", country: "Turkey" },
-                { name: "Celal Tuğberk Kuzey", country: "Turkey" },
-                { name: "Can Gündoğan", country: "Turkey" },
-                { name: "Can Ün", country: "Turkey" },
-                { name: "Can Celiloğlu", country: "Turkey" }
+                { name: "Mehmet Borneo", country: "Turkey", title: "Winner" },
+                { name: "Celal Tuğberk Kuzey", country: "Turkey", title: "1st Runner Up" },
+                { name: "Can Gündoğan", country: "Turkey", title: "2nd Runner Up" },
+                { name: "Can Ün", country: "Turkey", title: "3rd Runner Up" },
+                { name: "Can Celiloğlu", country: "Turkey", title: "4th Runner Up" }
             ],
             women: [
-                { name: "İrem Cannur Özgen", country: "Turkey" },
-                { name: "Mine Balım Bingül", country: "Turkey" },
-                { name: "Gülben Güven", country: "Turkey" },
-                { name: "Nurbanu Esen", country: "Turkey" },
-                { name: "Mine Yılmaz", country: "Turkey" }
+                { name: "İrem Cannur Özgen", country: "Turkey", title: "Winner" },
+                { name: "Mine Balım Bingül", country: "Turkey", title: "1st Runner Up" },
+                { name: "Gülben Güven", country: "Turkey", title: "2nd Runner Up" },
+                { name: "Nurbanu Esen", country: "Turkey", title: "3rd Runner Up" },
+                { name: "Mine Yılmaz", country: "Turkey", title: "4th Runner Up" }
             ]
         },
         mentions: [
@@ -71,18 +85,18 @@ export const turkiyeData = [
         ],
         top5: {
             men: [
-                { name: "Çağrı Baylan", country: "Turkey" },
-                { name: "Barış Öngel", country: "Turkey" },
-                { name: "Eren Şentürk", country: "Turkey" },
-                { name: "Doruk Demirci", country: "Turkey" },
-                { name: "Davut Doğan", country: "Turkey" }
+                { name: "Çağrı Baylan", country: "Turkey", title: "Winner" },
+                { name: "Barış Öngel", country: "Turkey", title: "1st Runner Up" },
+                { name: "Eren Şentürk", country: "Turkey", title: "2nd Runner Up" },
+                { name: "Doruk Demirci", country: "Turkey", title: "3rd Runner Up" },
+                { name: "Davut Doğan", country: "Turkey", title: "4th Runner Up" }
             ],
             women: [
-                { name: "Beste Tuğçe Viran", country: "Turkey" },
-                { name: "Simay Alp", country: "Turkey" },
-                { name: "Burcu Altunsaray", country: "Turkey" },
-                { name: "Deniz Eser", country: "Turkey" },
-                { name: "Beyzanur Muriç", country: "Turkey" }
+                { name: "Beste Tuğçe Viran", country: "Turkey", title: "Winner" },
+                { name: "Simay Alp", country: "Turkey", title: "1st Runner Up" },
+                { name: "Burcu Altunsaray", country: "Turkey", title: "2nd Runner Up" },
+                { name: "Deniz Eser", country: "Turkey", title: "3rd Runner Up" },
+                { name: "Beyzanur Muriç", country: "Turkey", title: "4th Runner Up" }
             ]
         },
         mentions: [
@@ -106,14 +120,14 @@ export const turkiyeData = [
         ],
         top5: {
             men: [
-                { name: "Osman Altuntaş", country: "Turkey" },
-                { name: "Kerem Tavşancı", country: "Turkey" },
-                { name: "Yüksel Bayer", country: "Turkey" }
+                { name: "Osman Altuntaş", country: "Turkey", title: "Winner" },
+                { name: "Kerem Tavşancı", country: "Turkey", title: "1st Runner Up" },
+                { name: "Yüksel Bayer", country: "Turkey", title: "2nd Runner Up" }
             ],
             women: [
-                { name: "Defne Şentürk", country: "Turkey" },
-                { name: "Aleyna Yılmaz", country: "Turkey" },
-                { name: "Tuğba Çetin", country: "Turkey" }
+                { name: "Defne Şentürk", country: "Turkey", title: "Winner" },
+                { name: "Aleyna Yılmaz", country: "Turkey", title: "1st Runner Up" },
+                { name: "Tuğba Çetin", country: "Turkey", title: "2nd Runner Up" }
             ]
         }
     }

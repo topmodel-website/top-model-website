@@ -23,21 +23,37 @@ const WinnerCard = ({ title, name, country, image }) => (
     </div>
 );
 
-const ListItem = ({ rank, name, country }) => (
-    <li className="flex items-center justify-between py-2 border-b border-white/10 last:border-0">
-        <span className="flex items-center">
-            <span className="w-6 h-6 rounded-full bg-gold/20 text-gold text-xs flex items-center justify-center mr-3 font-bold">
-                {rank}
-            </span>
-            <span className="text-gray-200 flex items-center gap-2">
-                {country && <span className="text-lg">{getFlag(country)}</span>}
-                {country || name}
-            </span>
-        </span>
-        {name && country && <span className="text-gray-400 text-sm">{name}</span>}
-        {!country && name && <span className="text-gray-400 text-sm">{name}</span>}
-    </li>
-);
+const getRankTitle = (rank, type = 'standard') => {
+    const titles = {
+        1: "Winner",
+        2: "1st Runner Up",
+        3: "2nd Runner Up",
+        4: "3rd Runner Up",
+        5: "4th Runner Up"
+    };
+    return titles[rank] || `${rank}. Place`;
+};
+
+const ListItem = ({ rank, name, country, title }) => {
+    const displayTitle = title || getRankTitle(rank);
+
+    return (
+        <li className="flex items-center justify-between py-3 border-b border-white/10 last:border-0">
+            <div className="flex items-center flex-1">
+                <div className="flex flex-col">
+                    <span className="text-gold text-xs font-bold uppercase tracking-wider mb-1">
+                        {displayTitle}
+                    </span>
+                    <span className="text-gray-200 flex items-center gap-2 font-medium">
+                        {country && <span className="text-lg">{getFlag(country)}</span>}
+                        {country}
+                    </span>
+                    <span className="text-gray-400 text-sm">{name}</span>
+                </div>
+            </div>
+        </li>
+    );
+};
 
 const YearSection = ({ data }) => {
     const { year, location, date, hosts, winners, top5, mentions } = data;

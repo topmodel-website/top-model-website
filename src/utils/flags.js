@@ -76,7 +76,8 @@ export const getFlag = (countryName) => {
         "Ukrayna": "🇺🇦",
         "Tayland": "🇹🇭",
         "Almanya": "🇩🇪",
-        "Arnavutluk": "🇦🇱"
+        "Arnavutluk": "🇦🇱",
+        "Bulgaristan": "🇧🇬"
     };
 
     // Normalize input to Title Case or match keys
