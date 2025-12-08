@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Loader2, CheckCircle, AlertCircle, Upload, X, FileText } from 'lucide-react';
-import { db } from '../firebase';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db, storage } from '../firebase';
+import { collection, doc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 import KvkkModal from '../components/KvkkModal';
+import { countryCodes } from '../data/countryCodes';
 
 const Apply = () => {
     const { t } = useTranslation();
@@ -29,9 +31,13 @@ const Apply = () => {
         hasPastContests: '',
         pastContests: '',
         phone: '',
+        countryCode: '+90',
         email: '',
         kvkkAccepted: false
     });
+
+
+
     const [photos, setPhotos] = useState([]);
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState({ type: '', message: '' });
@@ -42,69 +48,65 @@ const Apply = () => {
         setFormData({ ...formData, [e.target.name]: value });
     };
 
-    const handleFileChange = async (e) => {
+    const handlePhoneChange = (e) => {
+        // Remove non-digit characters
+        let value = e.target.value.replace(/\D/g, '');
+
+        // Limit to 10 digits (standard without country code)
+        if (value.length > 10) value = value.slice(0, 10);
+
+        // Format: 5XX XXX XX XX
+        if (value.length > 6) {
+            value = `${value.slice(0, 3)} ${value.slice(3, 6)} ${value.slice(6, 8)} ${value.slice(8)}`;
+        } else if (value.length > 3) {
+            value = `${value.slice(0, 3)} ${value.slice(3)}`;
+        }
+
+        setFormData({ ...formData, phone: value });
+    };
+
+    const handleTextOnly = (e) => {
+        // Allow letters (including Turkish), spaces, and basic punctuation like . or ' if needed, but strict 'text' usually means letters.
+        // Regex for letters (unicode property \p{L}) is best but JS support varies.
+        // Simple regex: /[^a-zA-Z\sğüşıöçĞÜŞİÖÇ]/g
+        const value = e.target.value.replace(/[^a-zA-Z\sğüşıöçĞÜŞİÖÇ]/g, '');
+        setFormData({ ...formData, [e.target.name]: value });
+    };
+
+    const handleNumberOnly = (e) => {
+        // Allow only digits
+        const value = e.target.value.replace(/\D/g, '');
+        setFormData({ ...formData, [e.target.name]: value });
+    };
+
+    const handleFileChange = (e) => {
         const files = Array.from(e.target.files);
         if (files.length + photos.length > 4) {
             alert(t('apply.messages.maxPhotos'));
             return;
         }
 
-        const processedPhotos = await Promise.all(files.map(file => processImage(file)));
-        setPhotos(prev => [...prev, ...processedPhotos]);
+        const newPhotos = files.map(file => ({
+            file: file,
+            preview: URL.createObjectURL(file)
+        }));
+        setPhotos(prev => [...prev, ...newPhotos]);
     };
 
     const removePhoto = (index) => {
-        setPhotos(prev => prev.filter((_, i) => i !== index));
-    };
-
-    // Resize and convert to Base64
-    const processImage = (file) => {
-        return new Promise((resolve) => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = (event) => {
-                const img = new Image();
-                img.src = event.target.result;
-                img.onload = () => {
-                    const canvas = document.createElement('canvas');
-                    const MAX_WIDTH = 800;
-                    const MAX_HEIGHT = 800;
-                    let width = img.width;
-                    let height = img.height;
-
-                    if (width > height) {
-                        if (width > MAX_WIDTH) {
-                            height *= MAX_WIDTH / width;
-                            width = MAX_WIDTH;
-                        }
-                    } else {
-                        if (height > MAX_HEIGHT) {
-                            width *= MAX_HEIGHT / height;
-                            height = MAX_HEIGHT;
-                        }
-                    }
-
-                    canvas.width = width;
-                    canvas.height = height;
-                    const ctx = canvas.getContext('2d');
-                    ctx.drawImage(img, 0, 0, width, height);
-                    resolve(canvas.toDataURL('image/jpeg', 0.7)); // Compress to 70% quality
-                };
-            };
+        setPhotos(prev => {
+            const newPhotos = [...prev];
+            URL.revokeObjectURL(newPhotos[index].preview);
+            newPhotos.splice(index, 1);
+            return newPhotos;
         });
     };
 
     const sendConfirmationEmail = async (toEmail, name) => {
-        // IMPORTANT: These are placeholder keys. You must replace them with your actual EmailJS keys.
         // Register at https://www.emailjs.com/ to get your Service ID, Template ID, and Public Key.
-        const SERVICE_ID = 'YOUR_SERVICE_ID';
-        const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-        const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
-
-        if (SERVICE_ID === 'YOUR_SERVICE_ID') {
-            console.warn('EmailJS keys are missing. Email not sent.');
-            return;
-        }
+        const SERVICE_ID = 'service_apz25cg';
+        const TEMPLATE_ID = 'template_tfo1uqp';
+        const PUBLIC_KEY = 'eny4UzUI9xIX2WcGr';
 
         try {
             await emailjs.send(
@@ -117,7 +119,7 @@ const Apply = () => {
                 },
                 PUBLIC_KEY
             );
-            console.log('Confirmation email sent');
+
         } catch (error) {
             console.error('Email sending failed:', error);
         }
@@ -131,38 +133,59 @@ const Apply = () => {
         if (photos.length !== 4) {
             setStatus({ type: 'error', message: t('apply.messages.minPhoto') });
             setLoading(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             return;
         }
 
         if (!formData.kvkkAccepted) {
             setStatus({ type: 'error', message: t('apply.messages.kvkkRequired') });
             setLoading(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             return;
         }
 
         try {
-            // Save to Firestore
-            await addDoc(collection(db, 'applications'), {
+            // Generate a reference with an ID beforehand
+            const docRef = doc(collection(db, 'applications'));
+            const applicationId = docRef.id;
+
+            // 1. Upload Photos to Firebase Storage (using Name_ID as folder)
+            const photoUrls = await Promise.all(photos.map(async (photoObj, index) => {
+                const safeName = formData.nameSurname.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
+                // Folder format: name_surname_DOCUMENTID
+                const folderName = `${safeName}_${applicationId}`;
+                const fileName = `photo_${index + 1}_${Date.now()}.jpg`;
+                const storageRef = ref(storage, `applications/${folderName}/${fileName}`);
+
+                const snapshot = await uploadBytes(storageRef, photoObj.file);
+                const downloadURL = await getDownloadURL(snapshot.ref);
+                return downloadURL;
+            }));
+
+            // 2. Save Application Data to Firestore using the pre-generated ID
+            await setDoc(docRef, {
                 ...formData,
-                photos: photos,
+                phone: `${formData.countryCode} ${formData.phone}`,
+                photos: photoUrls,
+                status: 'pending',
                 createdAt: serverTimestamp()
             });
 
-            // Send Confirmation Email
+            // 3. Send Confirmation Email
             await sendConfirmationEmail(formData.email, formData.nameSurname);
 
             setStatus({ type: 'success', message: t('apply.messages.success') });
             setFormData({
                 nameSurname: '', age: '', height: '', weight: '', education: '', city: '',
                 instagram: '', tshirtSize: '', swimsuitSize: '', shoeSize: '', passportExpiry: '',
-                experience: '', agency: '', pastContests: '', phone: '', email: '', kvkkAccepted: false
+                experience: '', agency: '', pastContests: '', phone: '', email: '', hasPassport: '', hasExperience: '', hasAgency: '', hasPastContests: '', kvkkAccepted: false
             });
             setPhotos([]);
         } catch (error) {
-            console.error("Error adding document: ", error);
-            setStatus({ type: 'error', message: t('apply.messages.error') });
+            setStatus({ type: 'error', message: error.message || t('apply.messages.error') });
         } finally {
             setLoading(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     };
 
@@ -223,7 +246,7 @@ const Apply = () => {
                                     type="text"
                                     name="nameSurname"
                                     value={formData.nameSurname}
-                                    onChange={handleChange}
+                                    onChange={handleTextOnly}
                                     required
                                     className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
                                 />
@@ -231,10 +254,11 @@ const Apply = () => {
                             <div>
                                 <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.age')}</label>
                                 <input
-                                    type="number"
+                                    type="text"
+                                    inputMode="numeric"
                                     name="age"
                                     value={formData.age}
-                                    onChange={handleChange}
+                                    onChange={handleNumberOnly}
                                     required
                                     className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
                                 />
@@ -245,7 +269,7 @@ const Apply = () => {
                                     type="text"
                                     name="city"
                                     value={formData.city}
-                                    onChange={handleChange}
+                                    onChange={handleTextOnly}
                                     required
                                     className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
                                 />
@@ -281,10 +305,11 @@ const Apply = () => {
                             <div>
                                 <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.height')}</label>
                                 <input
-                                    type="number"
+                                    type="text"
+                                    inputMode="numeric"
                                     name="height"
                                     value={formData.height}
-                                    onChange={handleChange}
+                                    onChange={handleNumberOnly}
                                     required
                                     className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
                                     placeholder="175"
@@ -293,10 +318,11 @@ const Apply = () => {
                             <div>
                                 <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.weight')}</label>
                                 <input
-                                    type="number"
+                                    type="text"
+                                    inputMode="numeric"
                                     name="weight"
                                     value={formData.weight}
-                                    onChange={handleChange}
+                                    onChange={handleNumberOnly}
                                     required
                                     className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
                                     placeholder="55"
@@ -305,10 +331,11 @@ const Apply = () => {
                             <div>
                                 <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.shoeSize')}</label>
                                 <input
-                                    type="number"
+                                    type="text"
+                                    inputMode="numeric"
                                     name="shoeSize"
                                     value={formData.shoeSize}
-                                    onChange={handleChange}
+                                    onChange={handleNumberOnly}
                                     required
                                     className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
                                     placeholder="38"
@@ -349,15 +376,29 @@ const Apply = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.phone')}</label>
-                                <input
-                                    type="tel"
-                                    name="phone"
-                                    value={formData.phone}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                                    placeholder="+90 555 000 0000"
-                                />
+                                <div className="flex gap-4">
+                                    <select
+                                        name="countryCode"
+                                        value={formData.countryCode}
+                                        onChange={handleChange}
+                                        className="w-24 bg-deepBlack/50 border border-white/10 rounded-lg px-2 py-3 text-white focus:border-gold focus:outline-none transition-colors appearance-none text-center"
+                                    >
+                                        {countryCodes.map((item) => (
+                                            <option key={`${item.country}-${item.code}`} value={item.code}>
+                                                {item.country} ({item.code})
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handlePhoneChange}
+                                        required
+                                        className="flex-1 w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                        placeholder="5XX XXX XX XX"
+                                    />
+                                </div>
                             </div>
                             <div>
                                 <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.email')}</label>
@@ -573,7 +614,7 @@ const Apply = () => {
                             <div className="mt-4 grid grid-cols-4 gap-4">
                                 {photos.map((photo, index) => (
                                     <div key={index} className="relative aspect-square rounded-lg overflow-hidden border border-gold/20">
-                                        <img src={photo} alt={`Preview ${index}`} className="w-full h-full object-cover" />
+                                        <img src={photo.preview} alt={`Preview ${index}`} className="w-full h-full object-cover" />
                                         <button
                                             type="button"
                                             onClick={() => removePhoto(index)}
