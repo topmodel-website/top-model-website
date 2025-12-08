@@ -176,6 +176,19 @@ const Apply = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-12"
                 >
+                    <div className="flex justify-center items-center gap-8 mb-8">
+                        <img
+                            src="/gallery/universe-logo.png"
+                            alt="Top Model of Universe"
+                            className="h-20 md:h-28 w-auto object-contain drop-shadow-xl"
+                        />
+                        <div className="h-16 w-px bg-gold/30"></div>
+                        <img
+                            src="/gallery/turkiye-logo.png"
+                            alt="Top Model of Türkiye"
+                            className="h-20 md:h-28 w-auto object-contain drop-shadow-xl"
+                        />
+                    </div>
                     <h1 className="text-4xl md:text-5xl font-serif font-bold text-gold mb-4">
                         {t('apply.title')}
                     </h1>
@@ -192,343 +205,345 @@ const Apply = () => {
                     className="bg-white/5 p-8 md:p-12 rounded-2xl border border-gold/20 backdrop-blur-sm"
                 >
                     {status.message && (
-                        <div className={`mb-6 p-4 rounded-lg flex items-center ${status.type === 'success' ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'}`}>
+                        <div className={`mb-8 p-4 rounded-lg flex items-center ${status.type === 'success' ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'}`}>
                             {status.type === 'success' ? <CheckCircle className="mr-2" /> : <AlertCircle className="mr-2" />}
                             {status.message}
                         </div>
                     )}
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        {/* Name Surname */}
-                        <div className="md:col-span-2">
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.nameSurname')}</label>
-                            <input
-                                type="text"
-                                name="nameSurname"
-                                value={formData.nameSurname}
-                                onChange={handleChange}
-                                required
-                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                            />
-                        </div>
-
-                        {/* Age */}
-                        <div>
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.age')}</label>
-                            <input
-                                type="number"
-                                name="age"
-                                value={formData.age}
-                                onChange={handleChange}
-                                required
-                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                            />
-                        </div>
-
-                        {/* Height */}
-                        <div>
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.height')}</label>
-                            <input
-                                type="number"
-                                name="height"
-                                value={formData.height}
-                                onChange={handleChange}
-                                required
-                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                                placeholder="175"
-                            />
-                        </div>
-
-                        {/* Weight */}
-                        <div>
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.weight')}</label>
-                            <input
-                                type="number"
-                                name="weight"
-                                value={formData.weight}
-                                onChange={handleChange}
-                                required
-                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                                placeholder="55"
-                            />
-                        </div>
-
-                        {/* Education */}
-                        <div>
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.education')}</label>
-                            <select
-                                name="education"
-                                value={formData.education}
-                                onChange={handleChange}
-                                required
-                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors appearance-none"
-                            >
-                                <option value="" disabled>{t('apply.form.educationOptions.placeholder')}</option>
-                                <option value="Ilköğretim">{t('apply.form.educationOptions.primary')}</option>
-                                <option value="Lise">{t('apply.form.educationOptions.highSchool')}</option>
-                                <option value="Ön Lisans">{t('apply.form.educationOptions.associate')}</option>
-                                <option value="Lisans">{t('apply.form.educationOptions.bachelor')}</option>
-                                <option value="Yüksek Lisans">{t('apply.form.educationOptions.master')}</option>
-                                <option value="Doktora">{t('apply.form.educationOptions.phd')}</option>
-                                <option value="Diğer">{t('apply.form.educationOptions.other')}</option>
-                            </select>
-                        </div>
-
-                        {/* City */}
-                        <div>
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.city')}</label>
-                            <input
-                                type="text"
-                                name="city"
-                                value={formData.city}
-                                onChange={handleChange}
-                                required
-                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                            />
-                        </div>
-
-                        {/* Instagram */}
-                        <div>
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.instagram')}</label>
-                            <input
-                                type="text"
-                                name="instagram"
-                                value={formData.instagram}
-                                onChange={handleChange}
-                                required
-                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                                placeholder="@username"
-                            />
-                        </div>
-
-                        {/* Phone */}
-                        <div>
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.phone')}</label>
-                            <input
-                                type="tel"
-                                name="phone"
-                                value={formData.phone}
-                                onChange={handleChange}
-                                required
-                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                                placeholder="+90 555 000 0000"
-                            />
-                        </div>
-
-                        {/* Email */}
-                        <div>
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.email')}</label>
-                            <input
-                                type="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                                placeholder="example@email.com"
-                            />
-                        </div>
-
-                        {/* T-shirt Size */}
-                        <div>
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.tshirtSize')}</label>
-                            <input
-                                type="text"
-                                name="tshirtSize"
-                                value={formData.tshirtSize}
-                                onChange={handleChange}
-                                required
-                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                                placeholder="S, M, L..."
-                            />
-                        </div>
-
-                        {/* Swimsuit Size */}
-                        <div>
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.swimsuitSize')}</label>
-                            <input
-                                type="text"
-                                name="swimsuitSize"
-                                value={formData.swimsuitSize}
-                                onChange={handleChange}
-                                required
-                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                                placeholder="36, 38..."
-                            />
-                        </div>
-
-                        {/* Shoe Size */}
-                        <div>
-                            <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.shoeSize')}</label>
-                            <input
-                                type="number"
-                                name="shoeSize"
-                                value={formData.shoeSize}
-                                onChange={handleChange}
-                                required
-                                className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                                placeholder="38"
-                            />
-                        </div>
-
-                        {/* Has Passport */}
-                        <div className="md:col-span-2">
-                            <label className="block text-gold text-sm font-bold mb-3 uppercase tracking-wider">{t('apply.form.hasPassport')}</label>
-                            <div className="flex space-x-8">
-                                {['yes', 'no'].map((option) => (
-                                    <label key={option} className="inline-flex items-center cursor-pointer group">
-                                        <div className={`relative flex items-center justify-center w-6 h-6 mr-3 border-2 rounded-full transition-all duration-300 ${formData.hasPassport === option ? 'border-gold bg-gold/10' : 'border-white/20 group-hover:border-gold/50'}`}>
-                                            <input
-                                                type="radio"
-                                                name="hasPassport"
-                                                value={option}
-                                                checked={formData.hasPassport === option}
-                                                onChange={handleChange}
-                                                className="absolute opacity-0 w-full h-full cursor-pointer"
-                                            />
-                                            <div className={`w-2.5 h-2.5 rounded-full bg-gold transform transition-transform duration-300 ${formData.hasPassport === option ? 'scale-100' : 'scale-0'}`} />
-                                        </div>
-                                        <span className={`text-base transition-colors duration-300 ${formData.hasPassport === option ? 'text-white font-medium' : 'text-gray-400 group-hover:text-white'}`}>
-                                            {t(`apply.form.${option}`)}
-                                        </span>
-                                    </label>
-                                ))}
+                    {/* Section 1: Personal Information */}
+                    <div className="mb-10">
+                        <h3 className="text-xl font-serif font-bold text-white mb-6 border-b border-gold/30 pb-2">
+                            {t('apply.sections.personalInfo')}
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="md:col-span-2">
+                                <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.nameSurname')}</label>
+                                <input
+                                    type="text"
+                                    name="nameSurname"
+                                    value={formData.nameSurname}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                />
                             </div>
+                            <div>
+                                <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.age')}</label>
+                                <input
+                                    type="number"
+                                    name="age"
+                                    value={formData.age}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.city')}</label>
+                                <input
+                                    type="text"
+                                    name="city"
+                                    value={formData.city}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                />
+                            </div>
+                            <div className="md:col-span-2">
+                                <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.education')}</label>
+                                <select
+                                    name="education"
+                                    value={formData.education}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors appearance-none"
+                                >
+                                    <option value="" disabled>{t('apply.form.educationOptions.placeholder')}</option>
+                                    <option value="Ilköğretim">{t('apply.form.educationOptions.primary')}</option>
+                                    <option value="Lise">{t('apply.form.educationOptions.highSchool')}</option>
+                                    <option value="Ön Lisans">{t('apply.form.educationOptions.associate')}</option>
+                                    <option value="Lisans">{t('apply.form.educationOptions.bachelor')}</option>
+                                    <option value="Yüksek Lisans">{t('apply.form.educationOptions.master')}</option>
+                                    <option value="Doktora">{t('apply.form.educationOptions.phd')}</option>
+                                    <option value="Diğer">{t('apply.form.educationOptions.other')}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
 
-                            {/* Passport Expiry - Conditional */}
-                            {formData.hasPassport === 'yes' && (
-                                <div className="mt-4">
-                                    <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.passportExpiry')}</label>
+                    {/* Section 2: Physical Stats */}
+                    <div className="mb-10">
+                        <h3 className="text-xl font-serif font-bold text-white mb-6 border-b border-gold/30 pb-2">
+                            {t('apply.sections.physicalStats')}
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div>
+                                <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.height')}</label>
+                                <input
+                                    type="number"
+                                    name="height"
+                                    value={formData.height}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                    placeholder="175"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.weight')}</label>
+                                <input
+                                    type="number"
+                                    name="weight"
+                                    value={formData.weight}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                    placeholder="55"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.shoeSize')}</label>
+                                <input
+                                    type="number"
+                                    name="shoeSize"
+                                    value={formData.shoeSize}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                    placeholder="38"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.tshirtSize')}</label>
+                                <input
+                                    type="text"
+                                    name="tshirtSize"
+                                    value={formData.tshirtSize}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                    placeholder="S, M, L..."
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.swimsuitSize')}</label>
+                                <input
+                                    type="text"
+                                    name="swimsuitSize"
+                                    value={formData.swimsuitSize}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                    placeholder="36, 38..."
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Section 3: Contact Info */}
+                    <div className="mb-10">
+                        <h3 className="text-xl font-serif font-bold text-white mb-6 border-b border-gold/30 pb-2">
+                            {t('apply.sections.contactInfo')}
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.phone')}</label>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                    placeholder="+90 555 000 0000"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.email')}</label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                    placeholder="example@email.com"
+                                />
+                            </div>
+                            <div className="md:col-span-2">
+                                <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.instagram')}</label>
+                                <div className="relative">
                                     <input
                                         type="text"
-                                        name="passportExpiry"
-                                        value={formData.passportExpiry}
+                                        name="instagram"
+                                        value={formData.instagram}
                                         onChange={handleChange}
-                                        required={formData.hasPassport === 'yes'}
                                         className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                                        placeholder="2028"
+                                        placeholder="@username (Optional)"
                                     />
                                 </div>
-                            )}
+                            </div>
                         </div>
+                    </div>
 
-                        {/* Has Experience */}
-                        <div className="md:col-span-2">
-                            <label className="block text-gold text-sm font-bold mb-3 uppercase tracking-wider">{t('apply.form.hasExperience')}</label>
-                            <div className="flex space-x-8">
-                                {['yes', 'no'].map((option) => (
-                                    <label key={option} className="inline-flex items-center cursor-pointer group">
-                                        <div className={`relative flex items-center justify-center w-6 h-6 mr-3 border-2 rounded-full transition-all duration-300 ${formData.hasExperience === option ? 'border-gold bg-gold/10' : 'border-white/20 group-hover:border-gold/50'}`}>
-                                            <input
-                                                type="radio"
-                                                name="hasExperience"
-                                                value={option}
-                                                checked={formData.hasExperience === option}
-                                                onChange={handleChange}
-                                                className="absolute opacity-0 w-full h-full cursor-pointer"
-                                            />
-                                            <div className={`w-2.5 h-2.5 rounded-full bg-gold transform transition-transform duration-300 ${formData.hasExperience === option ? 'scale-100' : 'scale-0'}`} />
-                                        </div>
-                                        <span className={`text-base transition-colors duration-300 ${formData.hasExperience === option ? 'text-white font-medium' : 'text-gray-400 group-hover:text-white'}`}>
-                                            {t(`apply.form.${option}`)}
-                                        </span>
-                                    </label>
-                                ))}
+                    {/* Section 4: Experience & Other */}
+                    <div className="mb-10">
+                        <h3 className="text-xl font-serif font-bold text-white mb-6 border-b border-gold/30 pb-2">
+                            {t('apply.sections.experience')}
+                        </h3>
+                        <div className="space-y-8">
+                            {/* Has Passport */}
+                            <div>
+                                <label className="block text-gold text-sm font-bold mb-3 uppercase tracking-wider">{t('apply.form.hasPassport')}</label>
+                                <div className="flex space-x-8">
+                                    {['yes', 'no'].map((option) => (
+                                        <label key={option} className="inline-flex items-center cursor-pointer group">
+                                            <div className={`relative flex items-center justify-center w-6 h-6 mr-3 border-2 rounded-full transition-all duration-300 ${formData.hasPassport === option ? 'border-gold bg-gold/10' : 'border-white/20 group-hover:border-gold/50'}`}>
+                                                <input
+                                                    type="radio"
+                                                    name="hasPassport"
+                                                    value={option}
+                                                    checked={formData.hasPassport === option}
+                                                    onChange={handleChange}
+                                                    className="absolute opacity-0 w-full h-full cursor-pointer"
+                                                />
+                                                <div className={`w-2.5 h-2.5 rounded-full bg-gold transform transition-transform duration-300 ${formData.hasPassport === option ? 'scale-100' : 'scale-0'}`} />
+                                            </div>
+                                            <span className={`text-base transition-colors duration-300 ${formData.hasPassport === option ? 'text-white font-medium' : 'text-gray-400 group-hover:text-white'}`}>
+                                                {t(`apply.form.${option}`)}
+                                            </span>
+                                        </label>
+                                    ))}
+                                </div>
+                                {formData.hasPassport === 'yes' && (
+                                    <div className="mt-4">
+                                        <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.passportExpiry')}</label>
+                                        <input
+                                            type="text"
+                                            name="passportExpiry"
+                                            value={formData.passportExpiry}
+                                            onChange={handleChange}
+                                            required={formData.hasPassport === 'yes'}
+                                            className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                            placeholder="2028"
+                                        />
+                                    </div>
+                                )}
                             </div>
 
-                            {/* Experience - Conditional */}
-                            {formData.hasExperience === 'yes' && (
-                                <div className="mt-4">
-                                    <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.experience')}</label>
-                                    <textarea
-                                        name="experience"
-                                        value={formData.experience}
-                                        onChange={handleChange}
-                                        required={formData.hasExperience === 'yes'}
-                                        className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors h-24 resize-none"
-                                    />
+                            {/* Has Experience */}
+                            <div>
+                                <label className="block text-gold text-sm font-bold mb-3 uppercase tracking-wider">{t('apply.form.hasExperience')}</label>
+                                <div className="flex space-x-8">
+                                    {['yes', 'no'].map((option) => (
+                                        <label key={option} className="inline-flex items-center cursor-pointer group">
+                                            <div className={`relative flex items-center justify-center w-6 h-6 mr-3 border-2 rounded-full transition-all duration-300 ${formData.hasExperience === option ? 'border-gold bg-gold/10' : 'border-white/20 group-hover:border-gold/50'}`}>
+                                                <input
+                                                    type="radio"
+                                                    name="hasExperience"
+                                                    value={option}
+                                                    checked={formData.hasExperience === option}
+                                                    onChange={handleChange}
+                                                    className="absolute opacity-0 w-full h-full cursor-pointer"
+                                                />
+                                                <div className={`w-2.5 h-2.5 rounded-full bg-gold transform transition-transform duration-300 ${formData.hasExperience === option ? 'scale-100' : 'scale-0'}`} />
+                                            </div>
+                                            <span className={`text-base transition-colors duration-300 ${formData.hasExperience === option ? 'text-white font-medium' : 'text-gray-400 group-hover:text-white'}`}>
+                                                {t(`apply.form.${option}`)}
+                                            </span>
+                                        </label>
+                                    ))}
                                 </div>
-                            )}
-                        </div>
-
-                        {/* Has Agency */}
-                        <div className="md:col-span-2">
-                            <label className="block text-gold text-sm font-bold mb-3 uppercase tracking-wider">{t('apply.form.hasAgency')}</label>
-                            <div className="flex space-x-8">
-                                {['yes', 'no'].map((option) => (
-                                    <label key={option} className="inline-flex items-center cursor-pointer group">
-                                        <div className={`relative flex items-center justify-center w-6 h-6 mr-3 border-2 rounded-full transition-all duration-300 ${formData.hasAgency === option ? 'border-gold bg-gold/10' : 'border-white/20 group-hover:border-gold/50'}`}>
-                                            <input
-                                                type="radio"
-                                                name="hasAgency"
-                                                value={option}
-                                                checked={formData.hasAgency === option}
-                                                onChange={handleChange}
-                                                className="absolute opacity-0 w-full h-full cursor-pointer"
-                                            />
-                                            <div className={`w-2.5 h-2.5 rounded-full bg-gold transform transition-transform duration-300 ${formData.hasAgency === option ? 'scale-100' : 'scale-0'}`} />
-                                        </div>
-                                        <span className={`text-base transition-colors duration-300 ${formData.hasAgency === option ? 'text-white font-medium' : 'text-gray-400 group-hover:text-white'}`}>
-                                            {t(`apply.form.${option}`)}
-                                        </span>
-                                    </label>
-                                ))}
+                                {formData.hasExperience === 'yes' && (
+                                    <div className="mt-4">
+                                        <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.experience')}</label>
+                                        <textarea
+                                            name="experience"
+                                            value={formData.experience}
+                                            onChange={handleChange}
+                                            required={formData.hasExperience === 'yes'}
+                                            className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors h-24 resize-none"
+                                        />
+                                    </div>
+                                )}
                             </div>
 
-                            {/* Agency - Conditional */}
-                            {formData.hasAgency === 'yes' && (
-                                <div className="mt-4">
-                                    <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.agency')}</label>
-                                    <input
-                                        type="text"
-                                        name="agency"
-                                        value={formData.agency}
-                                        onChange={handleChange}
-                                        required={formData.hasAgency === 'yes'}
-                                        className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                                    />
+                            {/* Has Agency */}
+                            <div>
+                                <label className="block text-gold text-sm font-bold mb-3 uppercase tracking-wider">{t('apply.form.hasAgency')}</label>
+                                <div className="flex space-x-8">
+                                    {['yes', 'no'].map((option) => (
+                                        <label key={option} className="inline-flex items-center cursor-pointer group">
+                                            <div className={`relative flex items-center justify-center w-6 h-6 mr-3 border-2 rounded-full transition-all duration-300 ${formData.hasAgency === option ? 'border-gold bg-gold/10' : 'border-white/20 group-hover:border-gold/50'}`}>
+                                                <input
+                                                    type="radio"
+                                                    name="hasAgency"
+                                                    value={option}
+                                                    checked={formData.hasAgency === option}
+                                                    onChange={handleChange}
+                                                    className="absolute opacity-0 w-full h-full cursor-pointer"
+                                                />
+                                                <div className={`w-2.5 h-2.5 rounded-full bg-gold transform transition-transform duration-300 ${formData.hasAgency === option ? 'scale-100' : 'scale-0'}`} />
+                                            </div>
+                                            <span className={`text-base transition-colors duration-300 ${formData.hasAgency === option ? 'text-white font-medium' : 'text-gray-400 group-hover:text-white'}`}>
+                                                {t(`apply.form.${option}`)}
+                                            </span>
+                                        </label>
+                                    ))}
                                 </div>
-                            )}
-                        </div>
-
-                        {/* Has Past Contests */}
-                        <div className="md:col-span-2">
-                            <label className="block text-gold text-sm font-bold mb-3 uppercase tracking-wider">{t('apply.form.hasPastContests')}</label>
-                            <div className="flex space-x-8">
-                                {['yes', 'no'].map((option) => (
-                                    <label key={option} className="inline-flex items-center cursor-pointer group">
-                                        <div className={`relative flex items-center justify-center w-6 h-6 mr-3 border-2 rounded-full transition-all duration-300 ${formData.hasPastContests === option ? 'border-gold bg-gold/10' : 'border-white/20 group-hover:border-gold/50'}`}>
-                                            <input
-                                                type="radio"
-                                                name="hasPastContests"
-                                                value={option}
-                                                checked={formData.hasPastContests === option}
-                                                onChange={handleChange}
-                                                className="absolute opacity-0 w-full h-full cursor-pointer"
-                                            />
-                                            <div className={`w-2.5 h-2.5 rounded-full bg-gold transform transition-transform duration-300 ${formData.hasPastContests === option ? 'scale-100' : 'scale-0'}`} />
-                                        </div>
-                                        <span className={`text-base transition-colors duration-300 ${formData.hasPastContests === option ? 'text-white font-medium' : 'text-gray-400 group-hover:text-white'}`}>
-                                            {t(`apply.form.${option}`)}
-                                        </span>
-                                    </label>
-                                ))}
+                                {formData.hasAgency === 'yes' && (
+                                    <div className="mt-4">
+                                        <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.agency')}</label>
+                                        <input
+                                            type="text"
+                                            name="agency"
+                                            value={formData.agency}
+                                            onChange={handleChange}
+                                            required={formData.hasAgency === 'yes'}
+                                            className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                        />
+                                    </div>
+                                )}
                             </div>
 
-                            {/* Past Contests - Conditional */}
-                            {formData.hasPastContests === 'yes' && (
-                                <div className="mt-4">
-                                    <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.pastContests')}</label>
-                                    <input
-                                        type="text"
-                                        name="pastContests"
-                                        value={formData.pastContests}
-                                        onChange={handleChange}
-                                        required={formData.hasPastContests === 'yes'}
-                                        className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                                    />
+                            {/* Has Past Contests */}
+                            <div>
+                                <label className="block text-gold text-sm font-bold mb-3 uppercase tracking-wider">{t('apply.form.hasPastContests')}</label>
+                                <div className="flex space-x-8">
+                                    {['yes', 'no'].map((option) => (
+                                        <label key={option} className="inline-flex items-center cursor-pointer group">
+                                            <div className={`relative flex items-center justify-center w-6 h-6 mr-3 border-2 rounded-full transition-all duration-300 ${formData.hasPastContests === option ? 'border-gold bg-gold/10' : 'border-white/20 group-hover:border-gold/50'}`}>
+                                                <input
+                                                    type="radio"
+                                                    name="hasPastContests"
+                                                    value={option}
+                                                    checked={formData.hasPastContests === option}
+                                                    onChange={handleChange}
+                                                    className="absolute opacity-0 w-full h-full cursor-pointer"
+                                                />
+                                                <div className={`w-2.5 h-2.5 rounded-full bg-gold transform transition-transform duration-300 ${formData.hasPastContests === option ? 'scale-100' : 'scale-0'}`} />
+                                            </div>
+                                            <span className={`text-base transition-colors duration-300 ${formData.hasPastContests === option ? 'text-white font-medium' : 'text-gray-400 group-hover:text-white'}`}>
+                                                {t(`apply.form.${option}`)}
+                                            </span>
+                                        </label>
+                                    ))}
                                 </div>
-                            )}
+                                {formData.hasPastContests === 'yes' && (
+                                    <div className="mt-4">
+                                        <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.pastContests')}</label>
+                                        <input
+                                            type="text"
+                                            name="pastContests"
+                                            value={formData.pastContests}
+                                            onChange={handleChange}
+                                            required={formData.hasPastContests === 'yes'}
+                                            className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                                        />
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
 

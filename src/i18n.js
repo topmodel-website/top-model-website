@@ -11,12 +11,15 @@ const resources = {
                 apply: "Başvuru",
                 management: "Yönetim",
                 media: "Medya",
+                gallery: "Galeri",
                 contact: "İletişim"
             },
             home: {
                 heroTitle: "Güzelliğin Ötesinde",
-                heroSubtitle: "Dünyanın en prestijli modellik yarışması",
+                heroSubtitle: "Keşfedilmek hayaliniz değil, mutluluğunuz olsun!",
                 explore: "Yarışmayı Keşfet",
+                exploreUniverse: "Universe'i Keşfet",
+                exploreTurkiye: "Türkiye'yi Keşfet",
                 introTitle: "Zarafet ve Yeteneğin Mirası",
                 introText: "Top Model of Universe ve Top Model of Türkiye, sadece güzellik yarışmaları değil; küresel moda endüstrisinin geleceğini şekillendiren, yetenek, zarafet ve kültürel çeşitliliğin kutlamasıdır.",
                 stats: {
@@ -35,9 +38,40 @@ const resources = {
                 location: "Konum",
                 date: "Tarih"
             },
+            gallery: {
+                title: "Galeri",
+                subtitle: "Prestijli etkinliklerimizden, podyum şovlarından ve sahne arkasından öne çıkanlar.",
+                allPhotos: "Tüm Fotoğraflar",
+                noPhotos: "Henüz fotoğraf bulunamadı. Lütfen galeri klasörüne fotoğraf ekleyiniz."
+            },
+            management: {
+                title: "Yönetim",
+                role: "Yönetim Kurulu Başkanı",
+                bio1: "Top Model of Universe ve Top Model of Türkiye'nin vizyoneri olarak Ali Durgut, kariyerini dünya çapında yetenekleri keşfetmeye ve geliştirmeye adamıştır.",
+                bio2: "Moda ve eğlence sektöründeki yılların deneyimiyle, kültürleri birleştiren ve güzelliği her haliyle kutlayan prestijli organizasyonlara imza atmıştır.",
+                bio3: "Yönetim felsefesi, profesyonel gelişim, disiplin ve gelecek vadeden modeller için uluslararası fırsatlar yaratmaya odaklanmaktadır.",
+                contactTitle: "Yönetim İletişim"
+            },
+            media: {
+                title: "Medya Merkezi",
+                subtitle: "En son videolar, basın bültenleri ve öne çıkanlar.",
+                videos: "Videolar",
+                news: "Basın & Haberler",
+                eventHighlight: "Etkinlik Özeti",
+                recap: "Büyük final gecesinin resmi özeti.",
+                pressTag: "Basın Bülteni",
+                newsItemTitle: "Top Model of Universe 2025 Duyuruldu",
+                newsItemDesc: "Gelecek sezon, 50'den fazla ülkeden yarışmacıyla şimdiye kadarki en görkemli sezon olmayı vaat ediyor..."
+            },
             apply: {
-                title: "Top Model of Türkiye Başvurusu",
-                subtitle: "Modellik kariyerinize ilk adımı atın. Yarışmaya katılmak için formu doldurun.",
+                title: "Top Model Yarışması Başvurusu",
+                subtitle: "Modellik kariyerinize ilk adımı atın. Başvuru formunu doldurun.",
+                sections: {
+                    personalInfo: "Kişisel Bilgiler",
+                    physicalStats: "Fiziksel Özellikler",
+                    contactInfo: "İletişim Bilgileri",
+                    experience: "Deneyim & Diğer"
+                },
                 form: {
                     nameSurname: "İsim Soyadı *",
                     age: "Yaş *",
@@ -55,7 +89,7 @@ const resources = {
                         other: "Diğer"
                     },
                     city: "Yaşadığınız Şehir *",
-                    instagram: "Instagram *",
+                    instagram: "Instagram (İsteğe bağlı)",
                     tshirtSize: "T-shirt Bedeni *",
                     swimsuitSize: "Mayo Bedeni *",
                     shoeSize: "Ayakkabı Numarası *",
@@ -91,27 +125,25 @@ const resources = {
                 title: "İletişim",
                 subtitle: "Sorularınız için bizimle iletişime geçin.",
                 getInTouch: "Bize Ulaşın",
-                contactInfo: "İletişim Bilgileri",
-                followUs: "Bizi Takip Edin",
-                form: {
-                    name: "Adınız",
-                    email: "E-posta Adresiniz",
-                    message: "Mesajınız",
-                    send: "Mesaj Gönder"
-                }
-            },
-            management: {
-                title: "Yönetim",
-                biography: "Biyografi",
-                contactBtn: "Yönetim İletişim"
-            },
-            media: {
-                title: "Medya & Haberler",
-                videos: "Genel Videolar",
-                news: "Basında Biz"
+                description: "Sponsorluk, katılım veya basın ile ilgili sorularınız için lütfen aşağıdaki bilgileri kullanarak bizimle iletişime geçin.",
+                emailUs: "Bize E-posta Gönderin",
+                locationTitle: "Konum",
+                location: "İstanbul, Türkiye",
+                followUs: "Bizi Takip Edin"
             },
             footer: {
-                rights: "Tüm hakları saklıdır."
+                rights: "Tüm hakları saklıdır.",
+                description: "Güzelliği, zerafeti ve yeteneği evren genelinde kutluyoruz.",
+                followUs: "Bizi Takip Edin",
+                contact: "İletişim"
+            },
+            universe: {
+                title: "Top Model of Universe",
+                description: "Uluslararası güzellik ve yetenek mirası. Prestijli yarışmamızın tarihini keşfedin."
+            },
+            turkiye: {
+                title: "Top Model of Türkiye",
+                description: "Ulusal gurur. Türkiye'nin en iyi modellerini kutluyoruz."
             }
         }
     },
@@ -124,12 +156,15 @@ const resources = {
                 apply: "Apply",
                 management: "Management",
                 media: "Media",
+                gallery: "Gallery",
                 contact: "Contact"
             },
             home: {
                 heroTitle: "Beyond Beauty",
-                heroSubtitle: "The world's most prestigious modeling competition",
+                heroSubtitle: "Let being discovered be your happiness, not just your dream!",
                 explore: "Explore Competition",
+                exploreUniverse: "Explore Universe",
+                exploreTurkiye: "Explore Türkiye",
                 introTitle: "A Legacy of Elegance",
                 introText: "Top Model of Universe and Top Model of Türkiye are not just beauty pageants; they are celebrations of talent, grace, and cultural diversity, shaping the future of the global fashion industry.",
                 stats: {
@@ -148,9 +183,21 @@ const resources = {
                 location: "Location",
                 date: "Date"
             },
+            gallery: {
+                title: "Gallery",
+                subtitle: "Highlights from our prestigious events, runway shows, and backstage moments.",
+                allPhotos: "All Photos",
+                noPhotos: "No photos found yet. Please add images to the gallery folder."
+            },
             apply: {
-                title: "Apply for Top Model of Türkiye",
-                subtitle: "Take the first step towards your modeling career. Fill out the form below to join the competition.",
+                title: "Top Model Competition Application",
+                subtitle: "Take the first step towards your modeling career. Fill out the application form.",
+                sections: {
+                    personalInfo: "Personal Information",
+                    physicalStats: "Physical Stats",
+                    contactInfo: "Contact Information",
+                    experience: "Experience & Other"
+                },
                 form: {
                     nameSurname: "Name Surname *",
                     age: "Age *",
@@ -168,7 +215,7 @@ const resources = {
                         other: "Other"
                     },
                     city: "City of Residence *",
-                    instagram: "Instagram *",
+                    instagram: "Instagram (Optional)",
                     tshirtSize: "T-shirt Size *",
                     swimsuitSize: "Swimsuit Size *",
                     shoeSize: "Shoe Size *",
@@ -204,27 +251,44 @@ const resources = {
                 title: "Contact",
                 subtitle: "Get in touch with us for any inquiries.",
                 getInTouch: "Get in Touch",
-                contactInfo: "Contact Information",
-                followUs: "Follow Us",
-                form: {
-                    name: "Your Name",
-                    email: "Your Email",
-                    message: "Your Message",
-                    send: "Send Message"
-                }
+                description: "For inquiries regarding sponsorship, participation, or press, please contact us using the information below.",
+                emailUs: "Email Us",
+                locationTitle: "Location",
+                location: "Istanbul, Turkiye",
+                followUs: "Follow Us"
             },
             management: {
                 title: "Management",
-                biography: "Biography",
-                contactBtn: "Contact Management"
+                role: "Chairman",
+                bio1: "As the visionary behind Top Model of Universe and Top Model of Türkiye, Ali Durgut has dedicated his career to discovering and nurturing world-class talent.",
+                bio2: "With years of experience in the fashion and entertainment industry, he has successfully organized prestigious events that bridge cultures and celebrate beauty in all its forms.",
+                bio3: "His management philosophy focuses on professional development, discipline, and creating international opportunities for aspiring models.",
+                contactTitle: "Contact for Management"
             },
             media: {
-                title: "Media & News",
-                videos: "General Videos",
-                news: "Press & News"
+                title: "Media Center",
+                subtitle: "Latest videos, press releases, and highlights.",
+                videos: "Videos",
+                news: "Press & News",
+                eventHighlight: "Event Highlight",
+                recap: "Official recap of the grand finale night.",
+                pressTag: "Press Release",
+                newsItemTitle: "Top Model of Universe 2025 Announced",
+                newsItemDesc: "The upcoming season promises to be the most spectacular yet, with contestants from over 50 countries..."
             },
             footer: {
-                rights: "All rights reserved."
+                rights: "All rights reserved.",
+                description: "Celebrating beauty, elegance, and talent across the universe.",
+                followUs: "Follow Us",
+                contact: "Contact"
+            },
+            universe: {
+                title: "Top Model of Universe",
+                description: "A legacy of international beauty and talent. Discover the history of our prestigious competition."
+            },
+            turkiye: {
+                title: "Top Model of Türkiye",
+                description: "The national pride. Celebrating the best models from Turkey."
             }
         }
     }

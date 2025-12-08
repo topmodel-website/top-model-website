@@ -1,8 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Instagram, Youtube } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import RotatingGalleryImage from '../components/RotatingGalleryImage';
 
 const Contact = () => {
+    const { t } = useTranslation();
+
     return (
         <div className="min-h-screen bg-deepBlack py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,9 +17,9 @@ const Contact = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h1 className="text-5xl font-serif font-bold text-gold mb-8">Get in Touch</h1>
+                        <h1 className="text-5xl font-serif font-bold text-gold mb-8">{t('contact.getInTouch')}</h1>
                         <p className="text-gray-400 text-lg mb-12 leading-relaxed">
-                            For inquiries regarding sponsorship, participation, or press, please contact us using the information below.
+                            {t('contact.description')}
                         </p>
 
                         <div className="space-y-8">
@@ -24,7 +28,7 @@ const Contact = () => {
                                     <Mail className="w-6 h-6" />
                                 </div>
                                 <div className="ml-6">
-                                    <h3 className="text-white font-bold text-lg mb-1">Email Us</h3>
+                                    <h3 className="text-white font-bold text-lg mb-1">{t('contact.emailUs')}</h3>
                                     <p className="text-gray-400">info@topmodelofuniverse.com</p>
                                     <p className="text-gray-400">management@topmodelofuniverse.com</p>
                                 </div>
@@ -35,14 +39,14 @@ const Contact = () => {
                                     <MapPin className="w-6 h-6" />
                                 </div>
                                 <div className="ml-6">
-                                    <h3 className="text-white font-bold text-lg mb-1">Location</h3>
-                                    <p className="text-gray-400">Istanbul, Turkiye</p>
+                                    <h3 className="text-white font-bold text-lg mb-1">{t('contact.locationTitle')}</h3>
+                                    <p className="text-gray-400">{t('contact.location')}</p>
                                 </div>
                             </div>
                         </div>
 
                         <div className="mt-16">
-                            <h3 className="text-white font-bold text-lg mb-6">Follow Us</h3>
+                            <h3 className="text-white font-bold text-lg mb-6">{t('contact.followUs')}</h3>
                             <div className="flex gap-4">
                                 <a
                                     href="https://instagram.com/topmodelofuniverse"
@@ -69,11 +73,29 @@ const Contact = () => {
                         initial={{ opacity: 0, x: 30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="h-full min-h-[400px] bg-gray-800 rounded-2xl overflow-hidden relative"
+                        className="h-full min-h-[400px] bg-gray-800 rounded-2xl overflow-hidden relative group shadow-2xl"
                     >
-                        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1568644396922-5c3bfae12521?q=80&w=1974&auto=format&fit=crop')] bg-cover bg-center opacity-50 hover:opacity-70 transition-opacity duration-500" />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <span className="text-white font-serif text-2xl tracking-widest">ISTANBUL</span>
+                        <img
+                            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+                            alt="World Map Network"
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale sepia brightness-50 contrast-125"
+                        />
+                        <div className="absolute inset-0 bg-deepBlack/20 transition-colors duration-500" />
+
+                        <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+                            <div className="flex items-center gap-6 transform transition-transform duration-500 group-hover:scale-105">
+                                <img
+                                    src="/gallery/universe-logo.png"
+                                    alt="Top Model of Universe"
+                                    className="h-24 md:h-28 w-auto object-contain drop-shadow-lg"
+                                />
+                                <div className="h-16 w-px bg-gold/60"></div>
+                                <img
+                                    src="/gallery/turkiye-logo.png"
+                                    alt="Top Model of Turkiye"
+                                    className="h-24 md:h-28 w-auto object-contain drop-shadow-lg"
+                                />
+                            </div>
                         </div>
                     </motion.div>
                 </div>

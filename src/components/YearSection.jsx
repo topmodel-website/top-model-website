@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MapPin, Calendar, Mic, Trophy, Award, Instagram } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { getFlag } from '../utils/flags';
@@ -176,9 +177,12 @@ const YearSection = ({ data }) => {
 
                 {/* Gallery Placeholder */}
                 <div className="text-center">
-                    <button className="px-8 py-3 border border-gold text-gold hover:bg-gold hover:text-deepBlack transition-all duration-300 uppercase tracking-widest text-sm font-bold">
+                    <Link
+                        to={`/gallery?category=${year}`}
+                        className="inline-block px-8 py-3 border border-gold text-gold hover:bg-gold hover:text-deepBlack transition-all duration-300 uppercase tracking-widest text-sm font-bold"
+                    >
                         {t('yearSection.viewGallery')} {year}
-                    </button>
+                    </Link>
                 </div>
             </div>
         </motion.div>
