@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Calendar, Mic, Trophy, Award } from 'lucide-react';
+import { MapPin, Calendar, Mic, Trophy, Award, Instagram } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { getFlag } from '../utils/flags';
 import { useTranslation } from 'react-i18next';
@@ -14,7 +14,9 @@ const WinnerCard = ({ title, name, country, image }) => (
             )}
         </div>
         <h4 className="text-gold font-serif text-xl mb-1">{title}</h4>
-        <p className="text-white font-medium text-lg">{name}</p>
+        <div className="flex items-center justify-center gap-2">
+            <p className="text-white font-medium text-lg">{name}</p>
+        </div>
         {country && (
             <p className="text-gray-400 text-sm uppercase tracking-wider flex items-center justify-center gap-2 mt-1">
                 <span className="text-lg">{getFlag(country)}</span> {country}
@@ -34,23 +36,34 @@ const getRankTitle = (rank, type = 'standard') => {
     return titles[rank] || `${rank}. Place`;
 };
 
-const ListItem = ({ rank, name, country, title }) => {
+const ListItem = ({ rank, name, country, title, instagram }) => {
     const displayTitle = title || getRankTitle(rank);
 
     return (
-        <li className="flex items-center justify-between py-3 border-b border-white/10 last:border-0">
+        <li className="flex items-center justify-between py-4 border-b border-white/10 last:border-0 group">
             <div className="flex items-center flex-1">
                 <div className="flex flex-col">
                     <span className="text-gold text-xs font-bold uppercase tracking-wider mb-1">
                         {displayTitle}
                     </span>
-                    <span className="text-gray-200 flex items-center gap-2 font-medium">
+                    <span className="text-gray-200 flex items-center gap-2 font-medium mb-1">
                         {country && <span className="text-lg">{getFlag(country)}</span>}
                         {country}
                     </span>
                     <span className="text-gray-400 text-sm">{name}</span>
                 </div>
             </div>
+            {instagram && (
+                <a
+                    href={instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 text-gold hover:bg-gold hover:text-black transition-all duration-300 border border-gold/30 hover:border-gold hover:scale-110 ml-4 shrink-0"
+                    title={`${name} Instagram`}
+                >
+                    <Instagram className="w-5 h-5" />
+                </a>
+            )}
         </li>
     );
 };
@@ -138,9 +151,22 @@ const YearSection = ({ data }) => {
                                         <Award className="w-4 h-4 mr-2" /> {award.title}
                                     </h4>
                                     <div className="space-y-1 text-center">
-                                        {award.names.map((name, idx) => (
-                                            <p key={idx} className="text-gray-300">{name}</p>
-                                        ))}
+                                        {award.names.map((item, idx) => {
+                                            const isObject = typeof item === 'object' && item !== null;
+                                            const name = isObject ? item.name : item;
+                                            const instagram = isObject ? item.instagram : null;
+
+                                            return (
+                                                <div key={idx} className="flex items-center justify-center gap-2">
+                                                    <p className="text-gray-300">{name}</p>
+                                                    {instagram && (
+                                                        <a href={instagram} target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-colors">
+                                                            <Instagram className="w-3 h-3" />
+                                                        </a>
+                                                    )}
+                                                </div>
+                                            );
+                                        })}
                                     </div>
                                 </div>
                             ))}
