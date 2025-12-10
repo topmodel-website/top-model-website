@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Instagram } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Management = () => {
@@ -44,7 +45,15 @@ const Management = () => {
 
                         <div className="mt-10 pt-10 border-t border-white/10">
                             <h3 className="text-gold font-serif text-2xl mb-4">{t('management.contactTitle')}</h3>
-                            <p className="text-white">info@topmodelofuniverse.com</p>
+                            <p className="text-white mb-4">info@topmodelofuniverse.com</p>
+                            <a
+                                href="https://www.instagram.com/alidurguttofficial/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center text-gold hover:text-white transition-colors"
+                            >
+                                <Instagram className="w-5 h-5 mr-2" /> @alidurguttofficial
+                            </a>
                         </div>
                     </motion.div>
                 </div>

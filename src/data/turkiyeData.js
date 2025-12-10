@@ -115,17 +115,17 @@ export const turkiyeData = [
         date: "01 Nisan 2022",
         hosts: "Bülend Özveren & Tuğba Özay",
         winners: [
-            { title: "Winner", name: "Defne Şentürk", country: "Turkey" },
-            { title: "Winner", name: "Osman Altuntaş", country: "Turkey" }
+            { title: "Winner", name: "Defne Şentürk", country: "Turkey", instagram: "https://www.instagram.com/defnesenturkmodel" },
+            { title: "Winner", name: "Osman Altıntaş", country: "Turkey", instagram: "https://www.instagram.com/osmanaltintas48" }
         ],
         top5: {
             men: [
-                { name: "Osman Altuntaş", country: "Turkey", title: "Winner" },
+                { name: "Osman Altıntaş", country: "Turkey", title: "Winner", instagram: "https://www.instagram.com/osmanaltintas48" },
                 { name: "Kerem Tavşancı", country: "Turkey", title: "1st Runner Up", instagram: "https://www.instagram.com/keremtavsanci" },
                 { name: "Yüksel Bayer", country: "Turkey", title: "2nd Runner Up", instagram: "https://www.instagram.com/yukselbayaar" }
             ],
             women: [
-                { name: "Defne Şentürk", country: "Turkey", title: "Winner" },
+                { name: "Defne Şentürk", country: "Turkey", title: "Winner", instagram: "https://www.instagram.com/defnesenturkmodel" },
                 { name: "Aleyna Yılmaz", country: "Turkey", title: "1st Runner Up", instagram: "https://www.instagram.com/aleynaaylms" },
                 { name: "Tuğba Çetin", country: "Turkey", title: "2nd Runner Up" }
             ]

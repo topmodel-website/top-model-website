@@ -63,19 +63,7 @@ export const universeData = [
                 { name: "Hariela Avdo", country: "Arnavutluk", title: "4th Runner Up", instagram: "https://www.instagram.com/hariela_a" }
             ]
         },
-        mentions: [
-            { title: "Best Talent (Winner)", names: [{ name: "Yoyo Muangmai", instagram: "https://www.instagram.com/yoyoktn" }] },
-            { title: "Best Face (Winner)", names: [{ name: "Mariam Nashwili", instagram: "https://www.instagram.com/mirianashvili_m" }, { name: "Katti Fofanah", instagram: "https://www.instagram.com/kattifofanah" }] },
-            { title: "Best Physique (Winner)", names: [{ name: "Giada Cinquegranaa", instagram: "https://www.instagram.com/giada.cinquegranaa" }, "Aleksandra Krasteva"] },
-            { title: "Best Photogenic (Winner)", names: [{ name: "Anjali Rahan", instagram: "https://www.instagram.com/anjali.rahan" }, "Defne Şentürk"] },
-            { title: "Best Walk (Winner)", names: [{ name: "Ilias Senhaji", instagram: "https://www.instagram.com/ilias.senhaji" }, { name: "Dan Mbela Mbuilu", instagram: "https://www.instagram.com/danmbuilu" }] },
-            { title: "Best Charm (Winner)", names: ["Osman Altıntaş"] },
-            { title: "Top Model Universe Asia (Winner)", names: [{ name: "Lorenzo Isip", instagram: "https://www.instagram.com/iam_lorenzoisip" }, "İm Dhruv"] },
-            { title: "Top Model Universe America (Winner)", names: [{ name: "Rosan Langman", instagram: "https://www.instagram.com/rosan_lankman" }] },
-            { title: "Top Model Universe Europe (Winner)", names: [{ name: "Albi Bella", instagram: "https://www.instagram.com/albi.bella" }, { name: "Tanisha Narain", instagram: "https://www.instagram.com/tanicha_narain" }] },
-            { title: "Top Model Universe Africa (Winner)", names: [{ name: "Dan Mbela Mbuilu", instagram: "https://www.instagram.com/danmbuilu" }] },
-            { title: "Top Model Universe Costume (Winner)", names: [{ name: "Ali Sarıkaya", instagram: "https://www.instagram.com/_alisarikaya_" }, { name: "John Wayne Alba", instagram: "https://www.instagram.com/_johnwaynealba" }, { name: "Plein Damiendo", instagram: "https://www.instagram.com/pleindamiendo_official" }, { name: "Şamil Bekir", instagram: "https://www.instagram.com/shamilbekir" }] }
-        ]
+
     },
     {
         year: 2023,
@@ -102,7 +90,8 @@ export const universeData = [
                 { name: "Aleksandra Krasteva", country: "Bulgaristan", title: "2nd Runner Up" },
                 { name: "Anjali Rahan", country: "Suriname", title: "3rd Runner Up", instagram: "https://www.instagram.com/anjali.rahan" }
             ]
-        }
+        },
+
     },
     {
         year: 2022,
@@ -110,24 +99,25 @@ export const universeData = [
         date: "2022",
         hosts: "Mehmet Yıldırım & Bekir Aksoy",
         winners: [
-            { title: "Miss Türkiye", name: "Defne Şentürk", country: "Türkiye" },
+            { title: "Miss Türkiye", name: "Defne Şentürk", country: "Türkiye", instagram: "https://www.instagram.com/defnesenturkmodel" },
             { title: "Mister Fas", name: "Ilias Senhaji", country: "Fas", instagram: "https://www.instagram.com/ilias.senhaji" }
         ],
         top5: {
             men: [
                 { name: "Ilias Senhaji", country: "Fas", title: "Winner", instagram: "https://www.instagram.com/ilias.senhaji" },
-                { name: "Dan Mbela Mbuilu", country: "Demokratik Kongo", title: "1st Runner Up", instagram: "https://www.instagram.com/danmbuilu" },
-                { name: "Osman Altıntaş", country: "Türkiye", title: "2nd Runner Up" },
-                { name: "Lorenzo Isip", country: "Filipinler", title: "3rd Runner Up", instagram: "https://www.instagram.com/iam_lorenzoisip" },
-                { name: "İm Dhruv", country: "Hindistan", title: "4th Runner Up" }
+                { name: "Dan Mbela Mbuilu", country: "Demokratik Kongo", title: "1st Runner Up", instagram: "https://www.instagram.com/danico243" },
+                { name: "Osman Altıntaş", country: "Türkiye", title: "2nd Runner Up", instagram: "https://www.instagram.com/osmanaltintas48" },
+                { name: "Lorenzo Isip", country: "Filipinler", title: "3rd Runner Up", instagram: "https://www.instagram.com/iamlorenzoned" },
+                { name: "İm Dhruv", country: "Hindistan", title: "4th Runner Up", instagram: "https://www.instagram.com/im.dhruv" }
             ],
             women: [
-                { name: "Defne Şentürk", country: "Türkiye", title: "Winner" },
+                { name: "Defne Şentürk", country: "Türkiye", title: "Winner", instagram: "https://www.instagram.com/defnesenturkmodel" },
                 { name: "Rosan Langman", country: "Hollanda", title: "1st Runner Up", instagram: "https://www.instagram.com/rosan_lankman" },
                 { name: "Albi Bella", country: "Rusya", title: "2nd Runner Up", instagram: "https://www.instagram.com/albi.bella" },
                 { name: "Tanisha Narain", country: "Suriname", title: "3rd Runner Up", instagram: "https://www.instagram.com/tanicha_narain" },
-                { name: "Stejsi", country: "Sırbistan", title: "4th Runner Up" }
+                { name: "Stejsi", country: "Sırbistan", title: "4th Runner Up", instagram: "https://www.instagram.com/steeejsiiiii" }
             ]
-        }
+        },
+
     }
 ];

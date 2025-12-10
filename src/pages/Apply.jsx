@@ -13,6 +13,7 @@ const Apply = () => {
     const { t } = useTranslation();
     const [formData, setFormData] = useState({
         nameSurname: '',
+        gender: '',
         age: '',
         height: '',
         weight: '',
@@ -176,7 +177,7 @@ const Apply = () => {
 
             setStatus({ type: 'success', message: t('apply.messages.success') });
             setFormData({
-                nameSurname: '', age: '', height: '', weight: '', education: '', city: '',
+                nameSurname: '', gender: '', age: '', height: '', weight: '', education: '', city: '',
                 instagram: '', tshirtSize: '', swimsuitSize: '', shoeSize: '', passportExpiry: '',
                 experience: '', agency: '', pastContests: '', phone: '', email: '', hasPassport: '', hasExperience: '', hasAgency: '', hasPastContests: '', kvkkAccepted: false
             });
@@ -252,6 +253,20 @@ const Apply = () => {
                                 />
                             </div>
                             <div>
+                                <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.gender')}</label>
+                                <select
+                                    name="gender"
+                                    value={formData.gender}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors appearance-none"
+                                >
+                                    <option value="" disabled>{t('apply.form.genderOptions.placeholder')}</option>
+                                    <option value="female">{t('apply.form.genderOptions.female')}</option>
+                                    <option value="male">{t('apply.form.genderOptions.male')}</option>
+                                </select>
+                            </div>
+                            <div>
                                 <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.age')}</label>
                                 <input
                                     type="text"
@@ -263,7 +278,7 @@ const Apply = () => {
                                     className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
                                 />
                             </div>
-                            <div>
+                            <div className="md:col-span-2">
                                 <label className="block text-gold text-sm font-bold mb-2 uppercase tracking-wider">{t('apply.form.city')}</label>
                                 <input
                                     type="text"
@@ -420,8 +435,9 @@ const Apply = () => {
                                         name="instagram"
                                         value={formData.instagram}
                                         onChange={handleChange}
+                                        required
                                         className="w-full bg-deepBlack/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
-                                        placeholder="@username (Optional)"
+                                        placeholder="@username"
                                     />
                                 </div>
                             </div>

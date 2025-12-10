@@ -75,6 +75,12 @@ const resources = {
                 form: {
                     nameSurname: "İsim Soyadı *",
                     age: "Yaş *",
+                    gender: "Cinsiyet *",
+                    genderOptions: {
+                        placeholder: "Seçiniz...",
+                        female: "Kadın",
+                        male: "Erkek"
+                    },
                     height: "Boy (cm) *",
                     weight: "Kilo (kg) *",
                     education: "Eğitim *",
@@ -89,7 +95,7 @@ const resources = {
                         other: "Diğer"
                     },
                     city: "Yaşadığınız Şehir *",
-                    instagram: "Instagram (İsteğe bağlı)",
+                    instagram: "Instagram *",
                     tshirtSize: "T-shirt Bedeni *",
                     swimsuitSize: "Mayo Bedeni *",
                     shoeSize: "Ayakkabı Numarası *",
@@ -114,7 +120,7 @@ const resources = {
                     sending: "Gönderiliyor..."
                 },
                 messages: {
-                    success: "Başvurunuz başarıyla alındı! E-posta adresinize bir onay mesajı gönderildi.",
+                    success: "Başvurunuz başarıyla alındı!",
                     error: "Başvuru gönderilirken bir hata oluştu. Lütfen tekrar deneyin.",
                     maxPhotos: "En fazla 4 fotoğraf yükleyebilirsiniz.",
                     minPhoto: "Lütfen 4 fotoğraf (2 yüz, 2 boy) yükleyin.",
@@ -201,6 +207,12 @@ const resources = {
                 form: {
                     nameSurname: "Name Surname *",
                     age: "Age *",
+                    gender: "Gender *",
+                    genderOptions: {
+                        placeholder: "Select...",
+                        female: "Female",
+                        male: "Male"
+                    },
                     height: "Height (cm) *",
                     weight: "Weight (kg) *",
                     education: "Education *",
@@ -215,7 +227,7 @@ const resources = {
                         other: "Other"
                     },
                     city: "City of Residence *",
-                    instagram: "Instagram (Optional)",
+                    instagram: "Instagram *",
                     tshirtSize: "T-shirt Size *",
                     swimsuitSize: "Swimsuit Size *",
                     shoeSize: "Shoe Size *",
@@ -240,7 +252,7 @@ const resources = {
                     sending: "Sending..."
                 },
                 messages: {
-                    success: "Application submitted successfully! A confirmation email has been sent to you.",
+                    success: "Application submitted successfully!",
                     error: "Error submitting application. Please try again.",
                     maxPhotos: "You can upload a maximum of 4 photos.",
                     minPhoto: "Please upload 4 photos (2 face, 2 body).",

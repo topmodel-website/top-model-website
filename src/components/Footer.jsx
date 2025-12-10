@@ -33,8 +33,11 @@ const Footer = () => {
                             <a href="https://instagram.com/topmodelofturkiye" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold transition-colors">
                                 <Instagram size={24} />
                             </a>
-                            <a href="#" className="text-gray-400 hover:text-gold transition-colors">
+                            <a href="https://www.youtube.com/@topmodelofuniverse/videos" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold transition-colors">
                                 <Youtube size={24} />
+                            </a>
+                            <a href="https://www.facebook.com/topmodelofuniverse" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold transition-colors">
+                                <Facebook size={24} />
                             </a>
                         </div>
                     </div>

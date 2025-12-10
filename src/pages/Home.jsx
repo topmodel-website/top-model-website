@@ -9,7 +9,7 @@ const Home = () => {
     const { t } = useTranslation();
 
     const stats = [
-        { icon: <Globe className="w-8 h-8 text-gold" />, value: "30+", label: t('home.stats.countries') },
+        { icon: <Globe className="w-8 h-8 text-gold" />, value: "50+", label: t('home.stats.countries') },
         { icon: <Users className="w-8 h-8 text-gold" />, value: "500+", label: t('home.stats.candidates') },
         { icon: <Star className="w-8 h-8 text-gold" />, value: "15+", label: t('home.stats.years') },
     ];

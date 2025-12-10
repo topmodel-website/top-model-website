@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Instagram, Youtube } from 'lucide-react';
+import { Mail, MapPin, Instagram, Youtube, Facebook } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import RotatingGalleryImage from '../components/RotatingGalleryImage';
 
@@ -30,7 +30,6 @@ const Contact = () => {
                                 <div className="ml-6">
                                     <h3 className="text-white font-bold text-lg mb-1">{t('contact.emailUs')}</h3>
                                     <p className="text-gray-400">info@topmodelofuniverse.com</p>
-                                    <p className="text-gray-400">management@topmodelofuniverse.com</p>
                                 </div>
                             </div>
 
@@ -47,7 +46,7 @@ const Contact = () => {
 
                         <div className="mt-16">
                             <h3 className="text-white font-bold text-lg mb-6">{t('contact.followUs')}</h3>
-                            <div className="flex gap-4">
+                            <div className="flex flex-wrap gap-4">
                                 <a
                                     href="https://instagram.com/topmodelofuniverse"
                                     target="_blank"
@@ -63,6 +62,22 @@ const Contact = () => {
                                     className="flex items-center px-6 py-3 bg-white/5 rounded-full text-white hover:bg-gold hover:text-deepBlack transition-all duration-300"
                                 >
                                     <Instagram className="w-5 h-5 mr-2" /> @topmodelofturkiye
+                                </a>
+                                <a
+                                    href="https://www.youtube.com/@topmodelofuniverse/videos"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center px-6 py-3 bg-white/5 rounded-full text-white hover:bg-gold hover:text-deepBlack transition-all duration-300"
+                                >
+                                    <Youtube className="w-5 h-5 mr-2" /> @topmodelofuniverse
+                                </a>
+                                <a
+                                    href="https://www.facebook.com/topmodelofuniverse"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center px-6 py-3 bg-white/5 rounded-full text-white hover:bg-gold hover:text-deepBlack transition-all duration-300"
+                                >
+                                    <Facebook className="w-5 h-5 mr-2" /> Top Model of Universe
                                 </a>
                             </div>
                         </div>
