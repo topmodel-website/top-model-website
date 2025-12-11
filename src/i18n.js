@@ -33,6 +33,8 @@ const resources = {
                 winners: "Kazananlar",
                 top5Men: "İlk 5 Erkek",
                 top5Women: "İlk 5 Kadın",
+                top3Men: "İlk 3 Erkek",
+                top3Women: "İlk 3 Kadın",
                 specialAwards: "Özel Ödüller",
                 viewGallery: "Galeriye Git",
                 location: "Konum",
@@ -125,6 +127,23 @@ const resources = {
                     maxPhotos: "En fazla 4 fotoğraf yükleyebilirsiniz.",
                     minPhoto: "Lütfen 4 fotoğraf (2 yüz, 2 boy) yükleyin.",
                     kvkkRequired: "Lütfen KVKK metnini onaylayın."
+                },
+                conditions: {
+                    title: "Top Model of Türkiye 2026 Katılım Koşulları",
+                    items: [
+                        "Başvurular 15 Aralık 2025'te başlayacaktır.",
+                        "Adayların 18 yaşından gün almış olması ve 28 yaşından büyük olmaması gerekmektedir.",
+                        "Başvurular 15 Şubat tarihinde kapatılacaktır.",
+                        "Yarışmanın prensibi yeni yüz ve isimleri keşfetmek üzerine kurulmuştur. Bu nedenle daha önce başka bir yarışmanın finalinde yer almış hiçbir model TMT finaline alınmayacaktır. (Daha önce TMT'de yarışmış kendi modellerimize bu kural uygulanmayacaktır.)",
+                        "Başvuru formuna iki adet yüz ve iki adet boy fotoğrafı eklenecektir.",
+                        "Ön eleme süreci fotoğraflar üzerinden yapılacaktır. Daha sonra uygun görülen adaylar yarı final görüşmesine davet edileceklerdir.",
+                        "Yarışma başvurusu ücretsizdir. Ancak yarı finale kalan adaylardan fotoğraf çekimi (photo shooting) ücreti alınacaktır.",
+                        "2026 Yarı Finali Nisan ayında İstanbul’da yapılacaktır. Jüri oylaması sonucu 25 erkek ve 25 kadın model adayı adını BÜYÜK finale yazdıracaktır.",
+                        "Yarışma finali halka açık ve noter huzurunda yapılacaktır. Dereceye giren ilk beş modelimizle iki senelik anlaşma yapılacaktır.",
+                        "Sponsor durumuna göre finale kalan modellerimiz, yurt dışındaki defile ve organizasyonlarda ülkemizi temsil etme imkanına sahip olacaklardır.",
+                        "Yarışma büyük finalinde ONLİNE oylama (Halk Oylaması) YAPILACAKTIR. Burada ilk ikiye giren modellerin yarışmadaki jüri oyları sırasıyla %40 ve %20 artırılarak üst sıralarda yer alma şansı ve avantajı verilecektir. Oranlar noter tarafından final oylarına eklenecektir."
+                    ],
+                    footer: "Keşfedilmek hayaliniz değil, mutluluğunuz olmalıdır.\nTüm katılımcılara iyi şanslar diliyoruz."
                 }
             },
             contact: {
@@ -132,6 +151,7 @@ const resources = {
                 subtitle: "Sorularınız için bizimle iletişime geçin.",
                 getInTouch: "Bize Ulaşın",
                 description: "Sponsorluk, katılım veya basın ile ilgili sorularınız için lütfen aşağıdaki bilgileri kullanarak bizimle iletişime geçin.",
+                phone: "Telefon",
                 emailUs: "Bize E-posta Gönderin",
                 locationTitle: "Konum",
                 location: "İstanbul, Türkiye",
@@ -184,6 +204,8 @@ const resources = {
                 winners: "Winners",
                 top5Men: "Top 5 Men",
                 top5Women: "Top 5 Women",
+                top3Men: "Top 3 Men",
+                top3Women: "Top 3 Women",
                 specialAwards: "Special Awards",
                 viewGallery: "View Gallery",
                 location: "Location",
@@ -257,6 +279,23 @@ const resources = {
                     maxPhotos: "You can upload a maximum of 4 photos.",
                     minPhoto: "Please upload 4 photos (2 face, 2 body).",
                     kvkkRequired: "Please accept the KVKK text."
+                },
+                conditions: {
+                    title: "Top Model of Türkiye 2026 Participation Conditions",
+                    items: [
+                        "Applications will start on December 15, 2025.",
+                        "Candidates must be at least 18 years old and not older than 28 years.",
+                        "Applications will close on February 15.",
+                        "The principle of the contest is to discover new faces and names. Therefore, no model who has previously taken part in the final of another contest will be accepted to the TMT final. (This rule will not apply to our own models who have competed in TMT before.)",
+                        "Two face and two full-body photos must be added to the application form.",
+                        "The preliminary elimination process will be done through photos. Afterwards, eligible candidates will be invited to the semi-final interview.",
+                        "Application to the contest is free. However, a photo shooting fee will be charged from the candidates who make it to the semi-finals.",
+                        "The 2026 Semi-Final will be held in Istanbul in April. As a result of the jury vote, 25 male and 25 female model candidates will print their names in the GRAND final.",
+                        "The competition final will be held open to the public and in the presence of a notary. A two-year agreement will be made with our top five models.",
+                        "According to the sponsor situation, our finalists will have the opportunity to represent our country in fashion shows and organizations abroad.",
+                        "ONLINE voting (Public Voting) WILL BE HELD in the grand final of the competition. Here, the jury votes of the models who enter the top two will be increased by 40% and 20% respectively, giving them the chance and advantage to take place in the top ranks. The rates will be added to the final votes by the notary."
+                    ],
+                    footer: "Being discovered should not be your dream, but your happiness.\nWe wish good luck to all participants."
                 }
             },
             contact: {
@@ -264,6 +303,7 @@ const resources = {
                 subtitle: "Get in touch with us for any inquiries.",
                 getInTouch: "Get in Touch",
                 description: "For inquiries regarding sponsorship, participation, or press, please contact us using the information below.",
+                phone: "Phone",
                 emailUs: "Email Us",
                 locationTitle: "Location",
                 location: "Istanbul, Turkiye",

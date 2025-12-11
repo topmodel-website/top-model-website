@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Send, Loader2, CheckCircle, AlertCircle, Upload, X, FileText } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Send, Loader2, CheckCircle, AlertCircle, Upload, X, FileText, Info, ChevronDown, ChevronUp } from 'lucide-react';
 import { db, storage } from '../firebase';
 import { collection, doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
@@ -42,7 +42,9 @@ const Apply = () => {
     const [photos, setPhotos] = useState([]);
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState({ type: '', message: '' });
-    const [isKvkkOpen, setIsKvkkOpen] = useState(false);
+    const [showKvkk, setShowKvkk] = useState(false);
+    const [showConditionsModal, setShowConditionsModal] = useState(true);
+    const [isConditionsExpanded, setIsConditionsExpanded] = useState(false);
 
     const handleChange = (e) => {
         const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
@@ -192,7 +194,55 @@ const Apply = () => {
 
     return (
         <div className="min-h-screen bg-deepBlack py-20">
-            <KvkkModal isOpen={isKvkkOpen} onClose={() => setIsKvkkOpen(false)} />
+            {/* KVKK Modal */}
+            <KvkkModal isOpen={showKvkk} onClose={() => setShowKvkk(false)} />
+
+            {/* Application Conditions Modal - Auto Open */}
+            <AnimatePresence>
+                {showConditionsModal && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                            onClick={() => setShowConditionsModal(false)}
+                        />
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                            className="relative bg-deepBlack border border-gold/30 rounded-2xl w-full max-w-2xl max-h-[80vh] overflow-hidden shadow-[0_0_50px_rgba(212,175,55,0.2)]"
+                        >
+                            <div className="p-6 border-b border-white/10 flex justify-between items-center bg-white/5">
+                                <h3 className="text-xl font-serif text-gold flex items-center gap-2">
+                                    <Info className="w-5 h-5" />
+                                    {t('apply.conditions.title')}
+                                </h3>
+                                <button
+                                    onClick={() => setShowConditionsModal(false)}
+                                    className="text-gray-400 hover:text-white transition-colors"
+                                >
+                                    <X className="w-6 h-6" />
+                                </button>
+                            </div>
+                            <div className="p-6 overflow-y-auto max-h-[calc(80vh-80px)] custom-scrollbar">
+                                <ul className="space-y-4 mb-6">
+                                    {t('apply.conditions.items', { returnObjects: true }).map((item, index) => (
+                                        <li key={index} className="flex items-start gap-3 text-gray-300">
+                                            <span className="text-gold mt-1.5">•</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <p className="text-gold font-serif text-lg italic text-center whitespace-pre-line border-t border-white/10 pt-6">
+                                    {t('apply.conditions.footer')}
+                                </p>
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
 
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
@@ -219,6 +269,62 @@ const Apply = () => {
                     <p className="text-gray-400 text-lg">
                         {t('apply.subtitle')}
                     </p>
+                </motion.div>
+
+                {/* Application Conditions */}
+                {/* Application Conditions - Collapsible */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className="bg-deepBlack border border-gold/30 rounded-2xl mb-12 shadow-[0_0_30px_rgba(212,175,55,0.1)] relative overflow-hidden cursor-pointer group"
+                    onClick={() => setIsConditionsExpanded(!isConditionsExpanded)}
+                >
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+
+                    <div className="relative z-10 p-8">
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                                <Info className="w-6 h-6 text-gold" />
+                                <h2 className="text-2xl md:text-3xl font-serif text-white group-hover:text-gold transition-colors">
+                                    {t('apply.conditions.title')}
+                                </h2>
+                            </div>
+                            <motion.div
+                                animate={{ rotate: isConditionsExpanded ? 180 : 0 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <ChevronDown className="w-6 h-6 text-gold" />
+                            </motion.div>
+                        </div>
+
+                        <AnimatePresence>
+                            {isConditionsExpanded && (
+                                <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: "auto", opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="overflow-hidden"
+                                >
+                                    <ul className="space-y-4 mb-8 mt-6">
+                                        {t('apply.conditions.items', { returnObjects: true }).map((item, index) => (
+                                            <li key={index} className="flex items-start gap-3 text-gray-300">
+                                                <span className="text-gold mt-1.5">•</span>
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    <div className="border-t border-white/10 pt-6">
+                                        <p className="text-gold font-serif text-lg italic text-center whitespace-pre-line">
+                                            {t('apply.conditions.footer')}
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
                 </motion.div>
 
                 <motion.form
@@ -662,7 +768,7 @@ const Apply = () => {
                             </label>
                             <button
                                 type="button"
-                                onClick={() => setIsKvkkOpen(true)}
+                                onClick={() => setShowKvkk(true)}
                                 className="ml-2 text-gold hover:underline inline-flex items-center"
                             >
                                 <FileText size={14} className="mr-1" /> {t('apply.form.readKvkk')}

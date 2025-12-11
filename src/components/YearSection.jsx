@@ -99,7 +99,30 @@ const YearSection = ({ data }) => {
                         )}
                         <div className="flex items-center">
                             <Mic className="w-4 h-4 text-gold mr-2" />
-                            <span>{t('yearSection.hosts')}: {hosts}</span>
+                            <span>{t('yearSection.hosts')}: </span>
+                            {Array.isArray(hosts) ? (
+                                <span className="ml-1">
+                                    {hosts.map((host, index) => (
+                                        <span key={index}>
+                                            {index > 0 && " & "}
+                                            {typeof host === 'string' ? (
+                                                host
+                                            ) : (
+                                                <a
+                                                    href={host.instagram}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="inline-flex items-center hover:text-gold transition-colors gap-1"
+                                                >
+                                                    {host.name} <Instagram className="w-3 h-3" />
+                                                </a>
+                                            )}
+                                        </span>
+                                    ))}
+                                </span>
+                            ) : (
+                                <span className="ml-1">{hosts}</span>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -112,7 +135,7 @@ const YearSection = ({ data }) => {
                         {top5.women && top5.women.length > 0 && (
                             <div className="bg-white/5 p-8 rounded-xl border border-white/10 h-full">
                                 <h3 className="text-2xl font-serif text-gold mb-6 flex items-center">
-                                    <Award className="w-6 h-6 mr-2" /> {t('yearSection.top5Women')}
+                                    <Award className="w-6 h-6 mr-2" /> {top5.women.length === 3 ? t('yearSection.top3Women') : t('yearSection.top5Women')}
                                 </h3>
                                 <ul className="space-y-2">
                                     {top5.women.map((item, idx) => (
@@ -129,7 +152,7 @@ const YearSection = ({ data }) => {
                         {top5.men && top5.men.length > 0 && (
                             <div className="bg-white/5 p-8 rounded-xl border border-white/10 h-full">
                                 <h3 className="text-2xl font-serif text-gold mb-6 flex items-center">
-                                    <Award className="w-6 h-6 mr-2" /> {t('yearSection.top5Men')}
+                                    <Award className="w-6 h-6 mr-2" /> {top5.men.length === 3 ? t('yearSection.top3Men') : t('yearSection.top5Men')}
                                 </h3>
                                 <ul className="space-y-2">
                                     {top5.men.map((item, idx) => (
@@ -154,12 +177,24 @@ const YearSection = ({ data }) => {
                                     <div className="space-y-1 text-center">
                                         {award.names.map((item, idx) => {
                                             const isObject = typeof item === 'object' && item !== null;
-                                            const name = isObject ? item.name : item;
+                                            const rawName = isObject ? item.name : item;
                                             const instagram = isObject ? item.instagram : null;
+
+                                            let displayName = rawName;
+                                            let flagStr = null;
+                                            const match = rawName.match(/(.+?)\s*\((.+?)\)$/);
+                                            if (match) {
+                                                displayName = match[1];
+                                                const countryName = match[2];
+                                                flagStr = getFlag(countryName);
+                                            }
 
                                             return (
                                                 <div key={idx} className="flex items-center justify-center gap-2">
-                                                    <p className="text-gray-300">{name}</p>
+                                                    <p className="text-gray-300 flex items-center gap-2">
+                                                        {flagStr && <span className="text-lg" title={match[2]}>{flagStr}</span>}
+                                                        {displayName}
+                                                    </p>
                                                     {instagram && (
                                                         <a href={instagram} target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-colors">
                                                             <Instagram className="w-3 h-3" />

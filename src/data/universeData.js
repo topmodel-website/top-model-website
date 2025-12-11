@@ -3,7 +3,7 @@ export const universeData = [
         year: 2025,
         location: "Hilton Piyalepaşa İstanbul",
         date: "26 Eylül 2025",
-        hosts: "Esin Yum & Ferit Evgi",
+        hosts: [{ name: "Esin Yum", instagram: "https://www.instagram.com/esinyum_media" }, { name: "Ferit Evgi", instagram: "https://www.instagram.com/feritevgi" }],
         winners: [
             { title: "Miss Azerbaijan", name: "Sema Imanzade", country: "Azerbaijan", instagram: "https://www.instagram.com/sem_a___" },
             { title: "Mr Belgium", name: "Lorentz Ford", country: "Belgium", instagram: "https://www.instagram.com/lorentz.ford" }
@@ -42,7 +42,7 @@ export const universeData = [
         year: 2024,
         location: "Sheraton City Center",
         date: "06 Ekim 2024",
-        hosts: "Esin Yum & Yavuz Seçkin",
+        hosts: [{ name: "Esin Yum", instagram: "https://www.instagram.com/esinyum_media" }, { name: "Yavuz Seçkin", instagram: "https://www.instagram.com/yavuzseckin" }],
         winners: [
             { title: "Miss Ukrayna", name: "Julia Kotyk", country: "Ukrayna", instagram: "https://www.instagram.com/_jul_liet_ta_" },
             { title: "Mister Tayland", name: "Yoyo Muangmai", country: "Tayland", instagram: "https://www.instagram.com/yoyoktn" }
@@ -53,7 +53,7 @@ export const universeData = [
                 { name: "Martin Irengham", country: "Hindistan", title: "1st Runner Up", instagram: "https://www.instagram.com/martinirengbam" },
                 { name: "Furkan Ocak", country: "Kuzey Kıbrıs", title: "2nd Runner Up", instagram: "https://www.instagram.com/furkn_ock" },
                 { name: "Brent Dalman", country: "Filipinler", title: "3rd Runner Up", instagram: "https://www.instagram.com/brent.dalman" },
-                { name: "Celal Tuğberk Kuzey", country: "Türkiye", title: "4th Runner Up" }
+                { name: "Celal Tuğberk Kuzey", country: "Türkiye", title: "4th Runner Up", instagram: "https://www.instagram.com/celalkuzeys" }
             ],
             women: [
                 { name: "Julia Kotyk", country: "Ukrayna", title: "Winner", instagram: "https://www.instagram.com/_jul_liet_ta_" },
@@ -69,7 +69,7 @@ export const universeData = [
         year: 2023,
         location: "Sheraton City Center, İstanbul",
         date: "06 Kasım 2023",
-        hosts: "Tuğba Özay & Mehmet Yıldırım & Deniz Eser",
+        hosts: [{ name: "Tuğba Özay", instagram: "https://www.instagram.com/tugbaozay10" }, { name: "Mehmet Yıldırım", instagram: "https://www.instagram.com/mehmetyofficial" }, "Deniz Eser"],
         winners: [
             { title: "Miss Türkiye", name: "Beste Tuğçe Viran", country: "Türkiye", instagram: "https://www.instagram.com/besteeviran" },
             { title: "Mister Sierra Leone", name: "Joseph E. Jalloh", country: "Sierra Leone", instagram: "https://www.instagram.com/art_by_jozy" }
@@ -97,7 +97,7 @@ export const universeData = [
         year: 2022,
         location: "Lazzoni Hotel – İstanbul",
         date: "2022",
-        hosts: "Mehmet Yıldırım & Bekir Aksoy",
+        hosts: [{ name: "Mehmet Yıldırım", instagram: "https://www.instagram.com/mehmetyofficial" }, { name: "Bekir Aksoy", instagram: "https://www.instagram.com/bekiraksoy" }],
         winners: [
             { title: "Miss Türkiye", name: "Defne Şentürk", country: "Türkiye", instagram: "https://www.instagram.com/defnesenturkmodel" },
             { title: "Mister Fas", name: "Ilias Senhaji", country: "Fas", instagram: "https://www.instagram.com/ilias.senhaji" }

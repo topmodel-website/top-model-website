@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Instagram, Youtube, Facebook } from 'lucide-react';
+import { Mail, MapPin, Instagram, Youtube, Facebook, Phone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import RotatingGalleryImage from '../components/RotatingGalleryImage';
 
@@ -23,6 +23,15 @@ const Contact = () => {
                         </p>
 
                         <div className="space-y-8">
+                            <div className="flex items-start">
+                                <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold mt-1">
+                                    <Phone className="w-6 h-6" />
+                                </div>
+                                <div className="ml-6">
+                                    <h3 className="text-white font-bold text-lg mb-1">{t('contact.phone')}</h3>
+                                    <p className="text-gray-400">+90 543 581 15 79</p>
+                                </div>
+                            </div>
                             <div className="flex items-start">
                                 <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold mt-1">
                                     <Mail className="w-6 h-6" />
