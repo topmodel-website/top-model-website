@@ -16,15 +16,15 @@ const resources = {
                 contact: "İletişim"
             },
             home: {
-                heroTitle: "Güzelliğin Ötesinde",
-                heroSubtitle: "Keşfedilmek hayaliniz değil, mutluluğunuz olsun!",
-                explore: "Yarışmayı Keşfet",
-                exploreUniverse: "Universe'i Keşfet",
-                exploreTurkiye: "Türkiye'yi Keşfet",
-                introTitle: "Zarafet ve Yeteneğin Mirası",
-                introText: "Top Model of Universe ve Top Model of Türkiye, sadece güzellik yarışmaları değil; küresel moda endüstrisinin geleceğini şekillendiren, yetenek, zarafet ve kültürel çeşitliliğin kutlamasıdır.",
+                heroTitle: "Güzelliğin ve Zarafetin Zirvesi",
+                heroSubtitle: "Keşfedilmek Sadece Bir Hayal Değil, Parlayan Geleceğiniz Olsun.",
+                explore: "Bu Eşsiz Yolculuğu Keşfet",
+                exploreUniverse: "Universe Dünyası",
+                exploreTurkiye: "Türkiye Etabı",
+                introTitle: "Kusursuzluğun Mirası",
+                introText: "Top Model of Universe ve Top Model of Türkiye; moda dünyasının kalbinde atan, estetiği ve karakteri buluşturan, sınırların ötesinde bir prestij platformudur. Burası sadece bir yarışma değil, geleceğin ikonlarının doğduğu yerdir.",
                 stats: {
-                    years: "Yıllık Mükemmellik",
+                    years: "Yıllık Tecrübe",
                     countries: "Katılımcı Ülke",
                     candidates: "Aday"
                 }
@@ -42,10 +42,10 @@ const resources = {
                 date: "Tarih"
             },
             gallery: {
-                title: "Fotoğraflar",
-                subtitle: "Prestijli etkinliklerimizden, podyum şovlarından ve sahne arkasından öne çıkanlar.",
-                allPhotos: "Tüm Fotoğraflar",
-                noPhotos: "Henüz fotoğraf bulunamadı. Lütfen galeri klasörüne fotoğraf ekleyiniz."
+                title: "Özel Koleksiyon",
+                subtitle: "Podyumun ışıltısı, kulisin gizemi ve objektiflere yansıyan en özel kareler.",
+                allPhotos: "Tüm Koleksiyonu Gör",
+                noPhotos: "Henüz fotoğraf bulunamadı. Galeri yakında güncellenecektir."
             },
             videos: {
                 title: "Videolar",
@@ -82,8 +82,8 @@ const resources = {
                 newsItemDesc: "Gelecek sezon, 50'den fazla ülkeden yarışmacıyla şimdiye kadarki en görkemli sezon olmayı vaat ediyor..."
             },
             apply: {
-                title: "Top Model Yarışması Başvurusu",
-                subtitle: "Modellik kariyerinize ilk adımı atın. Başvuru formunu doldurun.",
+                title: "Top Model Olma Yolculuğu",
+                subtitle: "Kariyerinizin dönüm noktası burada başlıyor. Başvuru formunu doldurun ve ışığınızı yansıtın.",
                 sections: {
                     personalInfo: "Kişisel Bilgiler",
                     physicalStats: "Fiziksel Özellikler",
@@ -176,17 +176,17 @@ const resources = {
             },
             footer: {
                 rights: "Tüm hakları saklıdır.",
-                description: "Güzelliği, zerafeti ve yeteneği evren genelinde kutluyoruz.",
-                followUs: "Bizi Takip Edin",
-                contact: "İletişim"
+                description: "Güzelliği, zarafeti ve yeteneği evrensel bir dille kutluyoruz.",
+                followUs: "Sosyal Medya",
+                contact: "Bize Ulaşın"
             },
             universe: {
                 title: "Top Model of Universe",
-                description: "Uluslararası güzellik ve yetenek mirası. Prestijli yarışmamızın tarihini keşfedin."
+                description: "Kıtaları birleştiren güzellik. Dünyanın en seçkin modellerinin buluşma noktası."
             },
             turkiye: {
                 title: "Top Model of Türkiye",
-                description: "Ulusal gurur. Türkiye'nin en iyi modellerini kutluyoruz."
+                description: "Zarafetin ve asilliğin ulusal simgesi. Türkiye'nin yıldızlarını dünya sahnesine hazırlıyoruz."
             }
         }
     },
@@ -204,15 +204,15 @@ const resources = {
                 contact: "Contact"
             },
             home: {
-                heroTitle: "Beyond Beauty",
-                heroSubtitle: "Let being discovered be your happiness, not just your dream!",
-                explore: "Explore Competition",
-                exploreUniverse: "Explore Universe",
-                exploreTurkiye: "Explore Türkiye",
-                introTitle: "A Legacy of Elegance",
-                introText: "Top Model of Universe and Top Model of Türkiye are not just beauty pageants; they are celebrations of talent, grace, and cultural diversity, shaping the future of the global fashion industry.",
+                heroTitle: "The Peak of Beauty & Grace",
+                heroSubtitle: "Let Discovery Be Your Future, Not Just A Dream.",
+                explore: "Discover the Journey",
+                exploreUniverse: "World of Universe",
+                exploreTurkiye: "Stage of Türkiye",
+                introTitle: "A Legacy of Perfection",
+                introText: "Top Model of Universe and Top Model of Türkiye are not merely pageants; they are the global stage where aesthetics meet character, creating a legacy of prestige beyond borders. This is where future icons are born.",
                 stats: {
-                    years: "Years of Excellence",
+                    years: "Years of Experience",
                     countries: "Participating Countries",
                     candidates: "Candidates"
                 }
@@ -230,10 +230,10 @@ const resources = {
                 date: "Date"
             },
             gallery: {
-                title: "Photos",
-                subtitle: "Highlights from our prestigious events, runway shows, and backstage moments.",
-                allPhotos: "All Photos",
-                noPhotos: "No photos found yet. Please add images to the gallery folder."
+                title: "Exclusive Collection",
+                subtitle: "The glitter of the runway, the mystery of backstage, and exclusive moments captured through the lens.",
+                allPhotos: "View Full Collection",
+                noPhotos: "No photos found yet. Gallery will be updated soon."
             },
             videos: {
                 title: "Videos",
@@ -242,8 +242,8 @@ const resources = {
                 noVideos: "No videos found yet."
             },
             apply: {
-                title: "Top Model Competition Application",
-                subtitle: "Take the first step towards your modeling career. Fill out the application form.",
+                title: "Journey to Becoming a Top Model",
+                subtitle: "Your career's turning point starts here. Fill out the form and let your light shine.",
                 sections: {
                     personalInfo: "Personal Information",
                     physicalStats: "Physical Stats",
@@ -364,17 +364,17 @@ const resources = {
             },
             footer: {
                 rights: "All rights reserved.",
-                description: "Celebrating beauty, elegance, and talent across the universe.",
-                followUs: "Follow Us",
-                contact: "Contact"
+                description: "Celebrating beauty, grace, and talent with a universal language.",
+                followUs: "Social Media",
+                contact: "Contact Us"
             },
             universe: {
                 title: "Top Model of Universe",
-                description: "A legacy of international beauty and talent. Discover the history of our prestigious competition."
+                description: "Beauty uniting continents. The meeting point of the world's most elite models."
             },
             turkiye: {
                 title: "Top Model of Türkiye",
-                description: "The national pride. Celebrating the best models from Turkey."
+                description: "The national symbol of grace and nobility. Preparing Turkey's stars for the world stage."
             }
         }
     }
