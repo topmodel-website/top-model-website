@@ -288,5 +288,240 @@ export const galleryData = [
         "src": "/gallery/2024/image04510.jpeg",
         "category": "2024",
         "alt": "image04510"
+    },
+    {
+        "src": "/gallery/2025/0N6A0390.JPG",
+        "category": "2025",
+        "alt": "0N6A0390"
+    },
+    {
+        "src": "/gallery/2025/0N6A0496.JPG",
+        "category": "2025",
+        "alt": "0N6A0496"
+    },
+    {
+        "src": "/gallery/2025/0N6A1361.JPG",
+        "category": "2025",
+        "alt": "0N6A1361"
+    },
+    {
+        "src": "/gallery/2025/0N6A1479.JPG",
+        "category": "2025",
+        "alt": "0N6A1479"
+    },
+    {
+        "src": "/gallery/2025/0N6A1553.JPG",
+        "category": "2025",
+        "alt": "0N6A1553"
+    },
+    {
+        "src": "/gallery/2025/0N6A2041.JPG",
+        "category": "2025",
+        "alt": "0N6A2041"
+    },
+    {
+        "src": "/gallery/2025/0N6A2202.JPG",
+        "category": "2025",
+        "alt": "0N6A2202"
+    },
+    {
+        "src": "/gallery/2025/DSC02982.jpg",
+        "category": "2025",
+        "alt": "DSC02982"
+    },
+    {
+        "src": "/gallery/2025/DSC02993.jpg",
+        "category": "2025",
+        "alt": "DSC02993"
+    },
+    {
+        "src": "/gallery/2025/DSC03029.jpg",
+        "category": "2025",
+        "alt": "DSC03029"
+    },
+    {
+        "src": "/gallery/2025/DSC03048.jpg",
+        "category": "2025",
+        "alt": "DSC03048"
+    },
+    {
+        "src": "/gallery/2025/DSC03071.jpg",
+        "category": "2025",
+        "alt": "DSC03071"
+    },
+    {
+        "src": "/gallery/2025/DSC03101.jpg",
+        "category": "2025",
+        "alt": "DSC03101"
+    },
+    {
+        "src": "/gallery/2025/DSC03125.jpg",
+        "category": "2025",
+        "alt": "DSC03125"
+    },
+    {
+        "src": "/gallery/2025/DSC03140.jpg",
+        "category": "2025",
+        "alt": "DSC03140"
+    },
+    {
+        "src": "/gallery/2025/DSC03170.jpg",
+        "category": "2025",
+        "alt": "DSC03170"
+    },
+    {
+        "src": "/gallery/2025/DSC03193.jpg",
+        "category": "2025",
+        "alt": "DSC03193"
+    },
+    {
+        "src": "/gallery/2025/DSC03210.jpg",
+        "category": "2025",
+        "alt": "DSC03210"
+    },
+    {
+        "src": "/gallery/2025/DSC03226.jpg",
+        "category": "2025",
+        "alt": "DSC03226"
+    },
+    {
+        "src": "/gallery/2025/DSC03227.jpg",
+        "category": "2025",
+        "alt": "DSC03227"
+    },
+    {
+        "src": "/gallery/2025/DSC03239.jpg",
+        "category": "2025",
+        "alt": "DSC03239"
+    },
+    {
+        "src": "/gallery/2025/DSC03254.jpg",
+        "category": "2025",
+        "alt": "DSC03254"
+    },
+    {
+        "src": "/gallery/2025/DSC03804.jpg",
+        "category": "2025",
+        "alt": "DSC03804"
+    },
+    {
+        "src": "/gallery/2025/DSC03816.jpg",
+        "category": "2025",
+        "alt": "DSC03816"
+    },
+    {
+        "src": "/gallery/2025/DSC03837.jpg",
+        "category": "2025",
+        "alt": "DSC03837"
+    },
+    {
+        "src": "/gallery/2025/DSC04785.jpg",
+        "category": "2025",
+        "alt": "DSC04785"
+    },
+    {
+        "src": "/gallery/2025/DSC04928.jpg",
+        "category": "2025",
+        "alt": "DSC04928"
+    },
+    {
+        "src": "/gallery/2025/DSC04940.jpg",
+        "category": "2025",
+        "alt": "DSC04940"
+    },
+    {
+        "src": "/gallery/2025/DSC04964.jpg",
+        "category": "2025",
+        "alt": "DSC04964"
+    },
+    {
+        "src": "/gallery/2025/DSC04987.jpg",
+        "category": "2025",
+        "alt": "DSC04987"
+    },
+    {
+        "src": "/gallery/2025/DSC05590.jpg",
+        "category": "2025",
+        "alt": "DSC05590"
+    },
+    {
+        "src": "/gallery/2025/DSC05637.jpg",
+        "category": "2025",
+        "alt": "DSC05637"
+    },
+    {
+        "src": "/gallery/2025/GA1A2785.JPG",
+        "category": "2025",
+        "alt": "GA1A2785"
+    },
+    {
+        "src": "/gallery/2025/GA1A2932.JPG",
+        "category": "2025",
+        "alt": "GA1A2932"
+    },
+    {
+        "src": "/gallery/ali_durgut/42342.jpeg",
+        "category": "ali_durgut",
+        "alt": "Ali Durgut"
+    },
+    {
+        "src": "/gallery/ali_durgut/4356343u.jpeg",
+        "category": "ali_durgut",
+        "alt": "Ali Durgut"
+    },
+    {
+        "src": "/gallery/ali_durgut/4365yrt.jpeg",
+        "category": "ali_durgut",
+        "alt": "Ali Durgut"
+    },
+    {
+        "src": "/gallery/ali_durgut/5234675.jpeg",
+        "category": "ali_durgut",
+        "alt": "Ali Durgut"
+    },
+    {
+        "src": "/gallery/ali_durgut/567463.jpeg",
+        "category": "ali_durgut",
+        "alt": "Ali Durgut"
+    },
+    {
+        "src": "/gallery/ali_durgut/8u7y6t.jpeg",
+        "category": "ali_durgut",
+        "alt": "Ali Durgut"
+    },
+    {
+        "src": "/gallery/ali_durgut/alidurgut.jpeg",
+        "category": "ali_durgut",
+        "alt": "Ali Durgut"
+    },
+    {
+        "src": "/gallery/ali_durgut/e34r5t6.jpeg",
+        "category": "ali_durgut",
+        "alt": "Ali Durgut"
+    },
+    {
+        "src": "/gallery/ali_durgut/r23r3wr.jpeg",
+        "category": "ali_durgut",
+        "alt": "Ali Durgut"
+    },
+    {
+        "src": "/gallery/ali_durgut/t6y78u9.jpeg",
+        "category": "ali_durgut",
+        "alt": "Ali Durgut"
+    },
+    {
+        "src": "/gallery/ali_durgut/t6y7u87y.jpeg",
+        "category": "ali_durgut",
+        "alt": "Ali Durgut"
+    },
+    {
+        "src": "/gallery/ali_durgut/u87y6t.jpeg",
+        "category": "ali_durgut",
+        "alt": "Ali Durgut"
+    },
+    {
+        "src": "/gallery/ali_durgut/w3e4r.jpeg",
+        "category": "ali_durgut",
+        "alt": "Ali Durgut"
     }
 ];

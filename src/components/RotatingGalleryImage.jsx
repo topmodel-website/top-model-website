@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { galleryData } from '../data/galleryData';
 
-const RotatingGalleryImage = ({ className, interval = 5000, overlayClassName = "" }) => {
-    // Filter images from 2022, 2023, and 2024
-    const validImages = galleryData.filter(img => ['2022', '2023', '2024'].includes(img.category));
+const RotatingGalleryImage = ({ className, interval = 5000, overlayClassName = "", categories = ['2022', '2023', '2024', '2025'] }) => {
+    // Filter images based on provided categories
+    const validImages = galleryData.filter(img => categories.includes(img.category));
 
     const [currentIndex, setCurrentIndex] = useState(() => Math.floor(Math.random() * validImages.length));
 

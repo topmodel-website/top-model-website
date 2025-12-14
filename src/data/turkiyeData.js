@@ -78,7 +78,7 @@ export const turkiyeData = [
         year: 2023,
         location: "Sheraton City Center",
         date: "2023",
-        hosts: ["Bircan Bali", { name: "Mehmet Yıldırım", instagram: "https://www.instagram.com/mehmetyofficial" }],
+        hosts: [{ name: "Bircan Bali", instagram: "https://www.instagram.com/bircanbalii" }, { name: "Mehmet Yıldırım", instagram: "https://www.instagram.com/mehmetyofficial" }],
         winners: [
             { title: "Winner", name: "Beste Tuğçe Viran", country: "Turkey", instagram: "https://www.instagram.com/besteeviran" },
             { title: "Winner", name: "Çağrı Baylan", country: "Turkey", instagram: "https://www.instagram.com/cagribyln" }
@@ -89,7 +89,7 @@ export const turkiyeData = [
                 { name: "Barış Öngel", country: "Turkey", title: "1st Runner Up", instagram: "https://www.instagram.com/barisongl" },
                 { name: "Eren Şentürk", country: "Turkey", title: "2nd Runner Up", instagram: "https://www.instagram.com/rensenturk" },
                 { name: "Doruk Demirci", country: "Turkey", title: "3rd Runner Up", instagram: "https://www.instagram.com/dorukdemirrciii" },
-                { name: "Davut Doğan", country: "Turkey", title: "4th Runner Up" }
+                { name: "Davut Doğan", country: "Turkey", title: "4th Runner Up", instagram: "https://www.instagram.com/davutdogan00" }
             ],
             women: [
                 { name: "Beste Tuğçe Viran", country: "Turkey", title: "Winner", instagram: "https://www.instagram.com/besteeviran" },
@@ -102,7 +102,7 @@ export const turkiyeData = [
         mentions: [
             { title: "Top Popularity", names: [{ name: "Pinar Özdemir", instagram: "https://www.instagram.com/pinarozdemirs" }, { name: "Doğuhan Özyurt", instagram: "https://www.instagram.com/doguhanozyurt" }] },
             { title: "Catwalk", names: [{ name: "Mert Yalçın", instagram: "https://www.instagram.com/mertyallciin" }, { name: "Deniz Eser", instagram: "https://www.instagram.com/denizeser_" }] },
-            { title: "Top Face", names: [{ name: "İdil Karakuş", instagram: "https://www.instagram.com/idilkarakuss" }, "Davut Doğan"] },
+            { title: "Top Face", names: [{ name: "İdil Karakuş", instagram: "https://www.instagram.com/idilkarakuss" }, { name: "Davut Doğan", instagram: "https://www.instagram.com/davutdogan00" }] },
             { title: "Top Fotomodel", names: [{ name: "Sibel Kaçan", instagram: "https://www.instagram.com/sibelkacantr" }, { name: "Umut Çelik", instagram: "https://www.instagram.com/umutcelikuc" }] },
             { title: "Top Charm", names: ["İclal Okur", "Mert Karabıyık"] },
             { title: "Top Promising", names: [{ name: "Afra Yıldırım", instagram: "https://www.instagram.com/afrayildrim" }, "Kaan Eren"] },

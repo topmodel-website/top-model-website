@@ -21,9 +21,9 @@ const Navbar = () => {
         { name: t('nav.universe'), path: '/universe' },
         { name: t('nav.turkiye'), path: '/turkiye' },
         { name: t('nav.apply'), path: '/apply' },
-        { name: t('nav.management'), path: '/management' },
-
         { name: t('nav.gallery'), path: '/gallery' },
+        { name: t('nav.videos'), path: '/videos' },
+        { name: t('nav.management'), path: '/management' },
         { name: t('nav.contact'), path: '/contact' },
     ];
 
@@ -31,7 +31,7 @@ const Navbar = () => {
 
     return (
         <nav className="fixed w-full z-50 transition-all duration-300 bg-deepBlack/80 backdrop-blur-lg border-b border-white/5 shadow-lg">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="w-full px-6 sm:px-12 lg:px-16">
                 <div className="flex items-center justify-between h-24">
                     {/* Logo */}
                     <div className="flex-shrink-0">
@@ -45,13 +45,13 @@ const Navbar = () => {
                     </div>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:block">
-                        <div className="ml-10 flex items-center space-x-8 lg:space-x-12">
+                    <div className="hidden lg:block">
+                        <div className="flex items-center space-x-8 xl:space-x-14">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.name}
                                     to={link.path}
-                                    className={`relative group py-2 text-xs lg:text-sm font-bold tracking-[0.15em] uppercase transition-colors duration-300 ${isActive(link.path)
+                                    className={`relative group py-2 text-xs xl:text-sm font-bold tracking-widest uppercase transition-colors duration-300 ${isActive(link.path)
                                         ? 'text-gold'
                                         : 'text-gray-300 hover:text-white'
                                         }`}
@@ -65,17 +65,17 @@ const Navbar = () => {
                             ))}
 
                             {/* Language Switcher */}
-                            <div className="flex items-center space-x-1 ml-6 border-l border-white/10 pl-6 h-6">
+                            <div className="flex items-center space-x-2 ml-4 border-l border-white/10 pl-8 h-6">
                                 <button
                                     onClick={() => changeLanguage('tr')}
-                                    className={`text-xs font-bold transition-colors hover:text-gold ${i18n.language === 'tr' ? 'text-gold' : 'text-gray-500'}`}
+                                    className={`text-xs xl:text-sm font-bold transition-colors hover:text-gold ${i18n.language === 'tr' ? 'text-gold' : 'text-gray-500'}`}
                                 >
                                     TR
                                 </button>
-                                <span className="text-gray-700 text-xs">/</span>
+                                <span className="text-gray-700 text-xs xl:text-sm">/</span>
                                 <button
                                     onClick={() => changeLanguage('en')}
-                                    className={`text-xs font-bold transition-colors hover:text-gold ${i18n.language === 'en' ? 'text-gold' : 'text-gray-500'}`}
+                                    className={`text-xs xl:text-sm font-bold transition-colors hover:text-gold ${i18n.language === 'en' ? 'text-gold' : 'text-gray-500'}`}
                                 >
                                     EN
                                 </button>
@@ -84,7 +84,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="md:hidden">
+                    <div className="lg:hidden">
                         <button
                             onClick={toggleMenu}
                             className="inline-flex items-center justify-center p-2 rounded-full text-gold hover:text-white hover:bg-white/5 transition-all focus:outline-none"
@@ -102,7 +102,7 @@ const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-deepBlack/95 backdrop-blur-xl border-b border-white/10 overflow-hidden"
+                        className="lg:hidden bg-deepBlack/95 backdrop-blur-xl border-b border-white/10 overflow-hidden"
                     >
                         <div className="px-4 py-6 space-y-4">
                             {navLinks.map((link) => (

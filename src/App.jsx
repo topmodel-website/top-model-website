@@ -10,6 +10,7 @@ import Apply from './pages/Apply';
 import Management from './pages/Management';
 
 import Gallery from './pages/Gallery';
+import Videos from './pages/Videos';
 import Contact from './pages/Contact';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
                     <Route path="/management" element={<Management />} />
 
                     <Route path="/gallery" element={<Gallery />} />
+                    <Route path="/videos" element={<Videos />} />
                     <Route path="/contact" element={<Contact />} />
                 </Routes>
             </Layout>

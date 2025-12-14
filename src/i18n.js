@@ -11,7 +11,8 @@ const resources = {
                 apply: "Başvuru",
                 management: "Yönetim",
                 media: "Medya",
-                gallery: "Galeri",
+                gallery: "Fotoğraflar",
+                videos: "Videolar",
                 contact: "İletişim"
             },
             home: {
@@ -41,17 +42,32 @@ const resources = {
                 date: "Tarih"
             },
             gallery: {
-                title: "Galeri",
+                title: "Fotoğraflar",
                 subtitle: "Prestijli etkinliklerimizden, podyum şovlarından ve sahne arkasından öne çıkanlar.",
                 allPhotos: "Tüm Fotoğraflar",
                 noPhotos: "Henüz fotoğraf bulunamadı. Lütfen galeri klasörüne fotoğraf ekleyiniz."
             },
+            videos: {
+                title: "Videolar",
+                subtitle: "En özel anlar, podyum şovları ve sahne arkası görüntüleri.",
+                allVideos: "Tüm Videolar",
+                noVideos: "Henüz video bulunamadı."
+            },
             management: {
                 title: "Yönetim",
                 role: "Yönetim Kurulu Başkanı",
-                bio1: "Top Model of Universe ve Top Model of Türkiye'nin vizyoneri olarak Ali Durgut, kariyerini dünya çapında yetenekleri keşfetmeye ve geliştirmeye adamıştır.",
-                bio2: "Moda ve eğlence sektöründeki yılların deneyimiyle, kültürleri birleştiren ve güzelliği her haliyle kutlayan prestijli organizasyonlara imza atmıştır.",
-                bio3: "Yönetim felsefesi, profesyonel gelişim, disiplin ve gelecek vadeden modeller için uluslararası fırsatlar yaratmaya odaklanmaktadır.",
+                intro: "Ali Durgut, İzmir Dokuz Eylül Üniversitesi'nden mezun olmuş, kariyerine havacılık sektörünün önde gelen kuruluşlarında üst düzey yönetici olarak başlamıştır. Turkish Airlines, Atlasglobal ve Air France gibi uluslararası havayolu şirketlerinde kritik roller üstlenmiştir.",
+                eurovisionTitle: "Eurovision'daki Öncü Rolü",
+                eurovisionText: "Profesyonel yaşamının yanı sıra, çocukluğundan itibaren uluslararası organizasyonlara büyük bir ilgi duyan Durgut, bu tutkusunu özellikle Eurovision Şarkı Yarışması alanında zirveye taşımıştır. 1996 yılından itibaren Türkiye Kulübü Başkanlığı görevini üstlenmiş ve TRT'nin Eurovision delegasyonlarında aktif rol almıştır. Bir dönem, ülkenin tanınmış sunucularından Bülend Özveren'in asistanlığını yapmış, aynı zamanda Eurovision'da Türkiye'yi temsil eden birçok sanatçının da danışmanlığını üstlenmiştir. Türk şarkılarının ve sanatçılarının Avrupa'daki tanıtım (promosyon) süreçlerini yönetmiş ve Türkiye Eurovision fan kulüplerinin kuruluşuna liderlik etmiştir.",
+                fashionTitle: "Moda ve Model Organizasyonlarında Yeni Bir Dönem",
+                fashionText1: "Paris'te yaşadığı dönemde Miss France ve Miss Universe gibi yarışmalar üzerine yaptığı çalışmalar vesilesiyle Türk model yarışmalarının sahipleriyle tanışmış ve bu organizasyonlara sponsorluk ve Proje Yönetmenliği desteği sağlamıştır. Ancak, bu yarışmalarda aradığı uluslararası kalite standartlarını bulamayınca, kendi projelerini hayata geçirme kararı almıştır.",
+                fashionText2: "Bu vizyonla, \"Top Model of Turkey\" ve \"Top Model Of Universe\" yarışmalarının isim haklarını alarak kurucusu olmuş ve Türk moda sektörünü ile model camiasını dünya çapında temsil etme misyonunu üstlenmiştir.",
+                fashionText3: "2022 yılından itibaren, dünyanın çeşitli ülkelerinden modacıları, modelleri ve basın mensuplarını İstanbul'da ağırlayarak Türkiye'nin küresel moda sahnesindeki etkinliğini artırmıştır. Top Model Of Turkey finallerinde derece alan modellerin yurt dışındaki yarışmalara katılımlarını sağlamış ve birçoğunun sponsorluğunu üstlenerek onların uluslararası başarıları için çaba göstermiştir. Bu alandaki ilk büyük başarısı, 2022'de bir Türk modelin (Defne Şentürk) dünya birinciliğini kazanması olmuştur. Sonraki yıllarda da moda sektöründe Türkiye'ye dünya birincilikleri ve ikincilikleri kazandırarak ülkenin adını başarıyla duyurmuştur.",
+                visionTitle: "Vizyonu ve Hedefleri",
+                visionText: "Türkiye'nin adını uluslararası alanda başarılarla duyurma mücadelesinden büyük bir keyif aldığını belirten Ali Durgut, vizyonunu şu sözlerle özetlemektedir:",
+                quote: "\"Amacım, Türk gençlerini ve modacılarını dünya podyumlarına taşımak, yarışmalara ve şovlara farklılıklar ve yenilikler getirmektir.\"",
+                readMore: "Devamını Oku",
+                showLess: "Daha Az Göster",
                 contactTitle: "Yönetim İletişim"
             },
             media: {
@@ -131,17 +147,18 @@ const resources = {
                 conditions: {
                     title: "Top Model of Türkiye 2026 Katılım Koşulları",
                     items: [
-                        "Başvurular 15 Aralık 2025'te başlayacaktır.",
-                        "Adayların 18 yaşından gün almış olması ve 28 yaşından büyük olmaması gerekmektedir.",
-                        "Başvurular 15 Şubat tarihinde kapatılacaktır.",
-                        "Yarışmanın prensibi yeni yüz ve isimleri keşfetmek üzerine kurulmuştur. Bu nedenle daha önce başka bir yarışmanın finalinde yer almış hiçbir model TMT finaline alınmayacaktır. (Daha önce TMT'de yarışmış kendi modellerimize bu kural uygulanmayacaktır.)",
-                        "Başvuru formuna iki adet yüz ve iki adet boy fotoğrafı eklenecektir.",
-                        "Ön eleme süreci fotoğraflar üzerinden yapılacaktır. Daha sonra uygun görülen adaylar yarı final görüşmesine davet edileceklerdir.",
-                        "Yarışma başvurusu ücretsizdir. Ancak yarı finale kalan adaylardan fotoğraf çekimi (photo shooting) ücreti alınacaktır.",
-                        "2026 Yarı Finali Nisan ayında İstanbul’da yapılacaktır. Jüri oylaması sonucu 25 erkek ve 25 kadın model adayı adını BÜYÜK finale yazdıracaktır.",
-                        "Yarışma finali halka açık ve noter huzurunda yapılacaktır. Dereceye giren ilk beş modelimizle iki senelik anlaşma yapılacaktır.",
-                        "Sponsor durumuna göre finale kalan modellerimiz, yurt dışındaki defile ve organizasyonlarda ülkemizi temsil etme imkanına sahip olacaklardır.",
-                        "Yarışma büyük finalinde ONLİNE oylama (Halk Oylaması) YAPILACAKTIR. Burada ilk ikiye giren modellerin yarışmadaki jüri oyları sırasıyla %40 ve %20 artırılarak üst sıralarda yer alma şansı ve avantajı verilecektir. Oranlar noter tarafından final oylarına eklenecektir."
+                        "Yarışmaya başvuracak adayların 18 yaşını doldurmuş, 28 yaşından gün almamış olmaları gerekmektedir.",
+                        "Başvurular 15 Aralık – 15 Şubat 2026 tarihleri arasında kabul edilecektir.",
+                        "Yarışmanın temel amacı yeni yüzler ve yeni isimler keşfetmektir. Bu doğrultuda, daha önce başka bir modellik yarışmasının finalinde yer almış adaylar TMT Büyük Finali’ne kabul edilmeyecektir.",
+                        "Ancak daha önce TMT’de yarışmış olan kendi modellerimiz bu kuraldan muaftır.",
+                        "Yarışmaya başvuru ücretsizdir. Yarı finale veya büyük finale kalmaya hak kazanan adaylardan fotoğraf çekimi (photo shooting) ve katılım bedeli talep edilecektir.",
+                        "Başvuru formuna iki adet yüz fotoğrafı ve iki adet boy fotoğrafı yüklenmesi zorunludur.",
+                        "Ön eleme süreci, başvuru sırasında iletilen fotoğraflar üzerinden gerçekleştirilecektir. Ön elemeyi geçen adaylar yarı final görüşmesine davet edilecektir.",
+                        "Yarışmanın yarı finali ve büyük finali İstanbul’da gerçekleştirilecektir. Jüri değerlendirmesi sonucunda 25 erkek ve 25 kadın model adayı büyük finale katılmaya hak kazanacaktır.",
+                        "Büyük finalde dereceye giren ilk beş model adayı ile iki (2) yıllık profesyonel sözleşme imzalanacaktır.",
+                        "Sponsor koşullarına bağlı olarak, finale kalan adaylar yurt dışındaki defile ve organizasyonlarda ülkemizi temsil etme fırsatı elde edebilecektir.",
+                        "Yarışma büyük finali halka açık olarak ve noter huzurunda gerçekleştirilecektir.",
+                        "Büyük final kapsamında online halk oylaması yapılacaktır. Halk oylamasında ilk iki sırada yer alan adayların jüri puanları; Birinci olan aday için %40, İkinci olan aday için %20 oranında artırılacaktır. Bu oranlar noter tarafından resmî jüri oylarına eklenecektir."
                     ],
                     footer: "Keşfedilmek hayaliniz değil, mutluluğunuz olmalıdır.\nTüm katılımcılara iyi şanslar diliyoruz."
                 }
@@ -182,7 +199,8 @@ const resources = {
                 apply: "Apply",
                 management: "Management",
                 media: "Media",
-                gallery: "Gallery",
+                gallery: "Photos",
+                videos: "Videos",
                 contact: "Contact"
             },
             home: {
@@ -212,10 +230,16 @@ const resources = {
                 date: "Date"
             },
             gallery: {
-                title: "Gallery",
+                title: "Photos",
                 subtitle: "Highlights from our prestigious events, runway shows, and backstage moments.",
                 allPhotos: "All Photos",
                 noPhotos: "No photos found yet. Please add images to the gallery folder."
+            },
+            videos: {
+                title: "Videos",
+                subtitle: "Special moments, runway shows, and backstage highlights.",
+                allVideos: "All Videos",
+                noVideos: "No videos found yet."
             },
             apply: {
                 title: "Top Model Competition Application",
@@ -283,17 +307,18 @@ const resources = {
                 conditions: {
                     title: "Top Model of Türkiye 2026 Participation Conditions",
                     items: [
-                        "Applications will start on December 15, 2025.",
                         "Candidates must be at least 18 years old and not older than 28 years.",
-                        "Applications will close on February 15.",
-                        "The principle of the contest is to discover new faces and names. Therefore, no model who has previously taken part in the final of another contest will be accepted to the TMT final. (This rule will not apply to our own models who have competed in TMT before.)",
-                        "Two face and two full-body photos must be added to the application form.",
-                        "The preliminary elimination process will be done through photos. Afterwards, eligible candidates will be invited to the semi-final interview.",
-                        "Application to the contest is free. However, a photo shooting fee will be charged from the candidates who make it to the semi-finals.",
-                        "The 2026 Semi-Final will be held in Istanbul in April. As a result of the jury vote, 25 male and 25 female model candidates will print their names in the GRAND final.",
-                        "The competition final will be held open to the public and in the presence of a notary. A two-year agreement will be made with our top five models.",
-                        "According to the sponsor situation, our finalists will have the opportunity to represent our country in fashion shows and organizations abroad.",
-                        "ONLINE voting (Public Voting) WILL BE HELD in the grand final of the competition. Here, the jury votes of the models who enter the top two will be increased by 40% and 20% respectively, giving them the chance and advantage to take place in the top ranks. The rates will be added to the final votes by the notary."
+                        "Applications will be accepted between December 15 and February 15, 2026.",
+                        "The main purpose of the competition is to discover new faces and new names. Accordingly, candidates who have previously taken part in the final of another modeling competition will not be accepted to the TMT Grand Final.",
+                        "However, our own models who have previously competed in TMT are exempt from this rule.",
+                        "Application to the competition is free. Candidates eligible for the semi-finals or grand final will be required to pay a photo shooting and participation fee.",
+                        "It is mandatory to upload two face photos and two full-body photos to the application form.",
+                        "The preliminary elimination process will be conducted based on the photos submitted during the application. Candidates who pass the preliminary round will be invited to a semi-final interview.",
+                        "The semi-final and grand final of the competition will be held in Istanbul. As a result of jury evaluation, 25 male and 25 female model candidates will qualify for the grand final.",
+                        "A two (2) year professional contract will be signed with the top five model candidates in the grand final.",
+                        "Depending on sponsor conditions, finalists may have the opportunity to represent our country in fashion shows and organizations abroad.",
+                        "The grand final of the competition will be open to the public and held in the presence of a notary.",
+                        "Online public voting will be held within the scope of the grand final. The jury scores of the candidates ranking in the top two in public voting will be increased by 40% for the first candidate and 20% for the second candidate. These rates will be added to the official jury votes by the notary."
                     ],
                     footer: "Being discovered should not be your dream, but your happiness.\nWe wish good luck to all participants."
                 }
@@ -312,9 +337,18 @@ const resources = {
             management: {
                 title: "Management",
                 role: "Chairman",
-                bio1: "As the visionary behind Top Model of Universe and Top Model of Türkiye, Ali Durgut has dedicated his career to discovering and nurturing world-class talent.",
-                bio2: "With years of experience in the fashion and entertainment industry, he has successfully organized prestigious events that bridge cultures and celebrate beauty in all its forms.",
-                bio3: "His management philosophy focuses on professional development, discipline, and creating international opportunities for aspiring models.",
+                intro: "Graduating from İzmir Dokuz Eylül University, Ali Durgut began his career as a senior executive in leading organizations of the aviation sector. He has undertaken critical roles in international airlines such as Turkish Airlines, Atlasglobal, and Air France.",
+                eurovisionTitle: "Pioneering Role in Eurovision",
+                eurovisionText: "Alongside his professional life, Durgut has had a keen interest in international organizations since childhood, carrying this passion to the peak in the field of the Eurovision Song Contest. Since 1996, he has served as the President of the Turkey Club and played an active role in TRT's Eurovision delegations. For a period, he worked as an assistant to one of the country's renowned presenters, Bülend Özveren, and also acted as a consultant for many artists representing Turkey in Eurovision. He managed the promotion processes of Turkish songs and artists in Europe and led the establishment of Turkish Eurovision fan clubs.",
+                fashionTitle: "A New Era in Fashion and Model Organizations",
+                fashionText1: "During his time in Paris, through his work on competitions like Miss France and Miss Universe, he met the owners of Turkish model competitions and provided sponsorship and Project Management support to these organizations. However, unable to find the international quality standards he sought in these competitions, he decided to bring his own projects to life.",
+                fashionText2: "With this vision, he acquired the naming rights for \"Top Model of Turkey\" and \"Top Model Of Universe\" competitions, becoming their founder and undertaking the mission of representing the Turkish fashion sector and modeling community worldwide.",
+                fashionText3: "Since 2022, he has increased Turkey's effectiveness on the global fashion stage by hosting fashion designers, models, and press members from various countries in Istanbul. He ensured the participation of models ranking in Top Model Of Turkey finals in international competitions abroad and undertook the sponsorship of many, striving for their international success. His first major success in this field was a Turkish model (Defne Şentürk) winning the world championship in 2022. In the following years, he successfully made the country's name heard by bringing world championships and runner-up titles to Turkey in the fashion sector.",
+                visionTitle: "Vision and Goals",
+                visionText: "Stating that he takes great pleasure in the struggle to announce Turkey's name with successes in the international arena, Ali Durgut summarizes his vision with these words:",
+                quote: "\"My goal is to carry Turkish youth and fashion designers to world podiums and to bring differences and innovations to competitions and shows.\"",
+                readMore: "Read More",
+                showLess: "Show Less",
                 contactTitle: "Contact for Management"
             },
             media: {

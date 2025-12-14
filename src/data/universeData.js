@@ -69,7 +69,7 @@ export const universeData = [
         year: 2023,
         location: "Sheraton City Center, İstanbul",
         date: "06 Kasım 2023",
-        hosts: [{ name: "Tuğba Özay", instagram: "https://www.instagram.com/tugbaozay10" }, { name: "Mehmet Yıldırım", instagram: "https://www.instagram.com/mehmetyofficial" }, "Deniz Eser"],
+        hosts: [{ name: "Tuğba Özay", instagram: "https://www.instagram.com/tugbaozay10" }, { name: "Mehmet Yıldırım", instagram: "https://www.instagram.com/mehmetyofficial" }],
         winners: [
             { title: "Miss Türkiye", name: "Beste Tuğçe Viran", country: "Türkiye", instagram: "https://www.instagram.com/besteeviran" },
             { title: "Mister Sierra Leone", name: "Joseph E. Jalloh", country: "Sierra Leone", instagram: "https://www.instagram.com/art_by_jozy" }
