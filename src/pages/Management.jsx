@@ -92,7 +92,7 @@ const Management = () => {
                         <div className="mt-10 pt-10 border-t border-white/10">
                             <h3 className="text-gold font-serif text-2xl mb-4">{t('management.contactTitle')}</h3>
                             <p className="text-white mb-2 text-lg font-medium">+90 543 581 15 79</p>
-                            <p className="text-white mb-4">info@topmodelofuniverse.com</p>
+                            <p className="text-white mb-4">contact@topmodelofuniverse.com</p>
                             <a
                                 href="https://www.instagram.com/alidurguttofficial/"
                                 target="_blank"

@@ -46,7 +46,7 @@ const Footer = () => {
                     <div className="text-center md:text-right">
                         <h4 className="text-white font-semibold mb-4">{t('footer.contact')}</h4>
                         <p className="text-gray-400 text-sm mb-1">+90 543 581 15 79</p>
-                        <p className="text-gray-400 text-sm">info@topmodelofuniverse.com</p>
+                        <p className="text-gray-400 text-sm">contact@topmodelofuniverse.com</p>
                         <p className="text-gray-400 text-sm">{t('contact.location')}</p>
                     </div>
                 </div>

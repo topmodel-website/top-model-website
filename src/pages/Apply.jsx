@@ -107,7 +107,7 @@ const Apply = () => {
 
     const sendConfirmationEmail = async (toEmail, name) => {
         // Register at https://www.emailjs.com/ to get your Service ID, Template ID, and Public Key.
-        const SERVICE_ID = 'service_apz25cg';
+        const SERVICE_ID = 'service_luew689';
         const TEMPLATE_ID = 'template_tfo1uqp';
         const PUBLIC_KEY = 'eny4UzUI9xIX2WcGr';
 
