@@ -7,27 +7,43 @@ const RotatingGalleryImage = ({ className, interval = 5000, overlayClassName = "
     const validImages = galleryData.filter(img => categories.includes(img.category));
 
     const [currentIndex, setCurrentIndex] = useState(() => Math.floor(Math.random() * validImages.length));
+    const [nextIndex, setNextIndex] = useState(() => Math.floor(Math.random() * validImages.length));
 
     useEffect(() => {
         if (validImages.length <= 1) return;
 
         const timer = setInterval(() => {
-            setCurrentIndex(prevIndex => {
-                let nextIndex;
+            setCurrentIndex(prevCurrent => {
+                // Switch to the pre-decided next image
+                const newCurrent = nextIndex;
+
+                // Calculate the subsequent image to start preloading
+                let newNext;
                 do {
-                    nextIndex = Math.floor(Math.random() * validImages.length);
-                } while (nextIndex === prevIndex);
-                return nextIndex;
+                    newNext = Math.floor(Math.random() * validImages.length);
+                } while (newNext === newCurrent);
+
+                setNextIndex(newNext);
+                return newCurrent;
             });
         }, interval);
 
         return () => clearInterval(timer);
-    }, [validImages.length, interval]);
+    }, [validImages.length, interval, nextIndex]);
 
     if (validImages.length === 0) return null;
 
     return (
         <div className={`relative overflow-hidden ${className}`}>
+            {/* Preload next image */}
+            {validImages[nextIndex] && (
+                <img
+                    src={validImages[nextIndex].src}
+                    alt=""
+                    className="hidden"
+                    style={{ display: 'none' }}
+                />
+            )}
             <AnimatePresence mode='popLayout'>
                 <motion.img
                     key={validImages[currentIndex].src}

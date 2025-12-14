@@ -162,6 +162,19 @@ const Gallery = () => {
                             onClick={(e) => e.stopPropagation()}
                         />
 
+                        {/* Preload adjacent images for smooth navigation */}
+                        <img
+                            src={filteredImages[(selectedImage.index + 1) % filteredImages.length].src}
+                            alt=""
+                            className="hidden"
+                            style={{ display: 'none' }}
+                        />
+                        <img
+                            src={filteredImages[(selectedImage.index - 1 + filteredImages.length) % filteredImages.length].src}
+                            alt=""
+                            className="hidden"
+                            style={{ display: 'none' }}
+                        />
 
                     </motion.div>
                 )}
