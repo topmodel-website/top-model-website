@@ -19,13 +19,16 @@ const Gallery = () => {
         }
     }, [location]);
 
+    // Filter out internal categories like 'ali_durgut'
+    const publicImages = galleryData.filter(img => img.category !== 'ali_durgut');
+
     // Get unique categories
-    const categories = ['all', ...new Set(galleryData.map(img => img.category))];
+    const categories = ['all', ...new Set(publicImages.map(img => img.category))];
 
     // Filter images
     const filteredImages = filter === 'all'
-        ? galleryData
-        : galleryData.filter(img => img.category === filter);
+        ? publicImages
+        : publicImages.filter(img => img.category === filter);
 
     const openLightbox = (img, index) => {
         setSelectedImage({ ...img, index });
