@@ -105,6 +105,7 @@ const Videos = () => {
                                         muted
                                         loop
                                         playsInline
+                                        preload="metadata"
                                         onMouseOver={e => e.target.play()}
                                         onMouseOut={e => e.target.pause()}
                                         className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"

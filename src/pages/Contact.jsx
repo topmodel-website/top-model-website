@@ -100,7 +100,7 @@ const Contact = () => {
                         className="h-full min-h-[400px] bg-gray-800 rounded-2xl overflow-hidden relative group shadow-2xl"
                     >
                         <img
-                            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+                            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1080&auto=format&fit=crop"
                             alt="World Map Network"
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale sepia brightness-50 contrast-125"
                         />
