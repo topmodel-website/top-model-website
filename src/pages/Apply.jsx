@@ -154,7 +154,17 @@ const Apply = () => {
 
             // 1. Upload Photos to Firebase Storage (using Name_ID as folder)
             const photoUrls = await Promise.all(photos.map(async (photoObj, index) => {
-                const safeName = formData.nameSurname.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
+                const turkishMap = {
+                    'ç': 'c', 'ğ': 'g', 'ı': 'i', 'ö': 'o', 'ş': 's', 'ü': 'u',
+                    'Ç': 'C', 'Ğ': 'G', 'İ': 'I', 'Ö': 'O', 'Ş': 'S', 'Ü': 'U'
+                };
+
+                const sanitize = (text) => {
+                    return text.split('').map(char => turkishMap[char] || char).join('')
+                        .replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
+                };
+
+                const safeName = sanitize(formData.nameSurname);
                 // Folder format: name_surname_DOCUMENTID
                 const folderName = `${safeName}_${applicationId}`;
                 const fileName = `photo_${index + 1}_${Date.now()}.jpg`;

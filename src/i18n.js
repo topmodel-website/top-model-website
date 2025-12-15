@@ -17,7 +17,7 @@ const resources = {
             },
             home: {
                 heroTitle: "Güzelliğin ve Zarafetin Zirvesi",
-                heroSubtitle: "Keşfedilmek Sadece Bir Hayal Değil, Parlayan Geleceğiniz Olsun.",
+                heroSubtitle: "Keşfedilmek Hayaliniz Değil, Mutluluğunuz Olsun!",
                 explore: "Bu Eşsiz Yolculuğu Keşfet",
                 exploreUniverse: "Universe Dünyası",
                 exploreTurkiye: "Türkiye Etabı",
@@ -131,7 +131,7 @@ const resources = {
                     email: "E-posta Adresi *",
                     photos: "Fotoğraflar (2 Yüz, 2 Boy) *",
                     uploadText: "Fotoğraf yüklemek için tıklayın",
-                    maxSize: "Maks 4 fotoğraf",
+                    maxSize: "Tam olarak 4 fotoğraf (2 yüz, 2 boy)",
                     kvkkConsent: "KVKK Aydınlatma Metni'ni okudum ve kabul ediyorum.",
                     readKvkk: "Metni Oku",
                     submit: "Başvuruyu Gönder",
@@ -141,7 +141,7 @@ const resources = {
                     success: "Başvurunuz başarıyla alındı!",
                     error: "Başvuru gönderilirken bir hata oluştu. Lütfen tekrar deneyin.",
                     maxPhotos: "En fazla 4 fotoğraf yükleyebilirsiniz.",
-                    minPhoto: "Lütfen 4 fotoğraf (2 yüz, 2 boy) yükleyin.",
+                    minPhoto: "Lütfen tam olarak 4 fotoğraf (2 yüz, 2 boy) yükleyiniz.",
                     kvkkRequired: "Lütfen KVKK metnini onaylayın."
                 },
                 conditions: {
@@ -291,7 +291,7 @@ const resources = {
                     email: "Email Address *",
                     photos: "Photos (2 Face, 2 Body) *",
                     uploadText: "Click to upload photos",
-                    maxSize: "Max 4 photos",
+                    maxSize: "Exactly 4 photos (2 face, 2 body)",
                     kvkkConsent: "I have read and accept the KVKK Clarification Text.",
                     readKvkk: "Read Text",
                     submit: "Submit Application",
@@ -301,7 +301,7 @@ const resources = {
                     success: "Application submitted successfully!",
                     error: "Error submitting application. Please try again.",
                     maxPhotos: "You can upload a maximum of 4 photos.",
-                    minPhoto: "Please upload 4 photos (2 face, 2 body).",
+                    minPhoto: "Please upload exactly 4 photos (2 face, 2 body).",
                     kvkkRequired: "Please accept the KVKK text."
                 },
                 conditions: {
