@@ -149,24 +149,29 @@ const Apply = () => {
 
         try {
             // Generate a reference with an ID beforehand
-            const docRef = doc(collection(db, 'applications'));
-            const applicationId = docRef.id;
+            // Generate a custom ID: Name_Surname_Timestamp
+            // Replace Turkish chars first, then non-alphanumeric with underscores
+            const turkishMap = {
+                'ç': 'c', 'ğ': 'g', 'ı': 'i', 'ö': 'o', 'ş': 's', 'ü': 'u',
+                'Ç': 'C', 'Ğ': 'G', 'İ': 'I', 'Ö': 'O', 'Ş': 'S', 'Ü': 'U'
+            };
+
+            const sanitize = (text) => {
+                return text.trim().split('').map(char => turkishMap[char] || char).join('')
+                    .replace(/[^a-zA-Z0-9]+/g, '_').toLowerCase();
+            };
+
+            const safeName = sanitize(formData.nameSurname);
+            // Use Name_Surname + very short timestamp to ensure uniqueness if same name applies twice
+            const customDocId = `${safeName}_${Date.now().toString().slice(-4)}`;
+
+            const docRef = doc(db, 'applications', customDocId);
+            const applicationId = customDocId;
 
             // 1. Upload Photos to Firebase Storage (using Name_ID as folder)
             const photoUrls = await Promise.all(photos.map(async (photoObj, index) => {
-                const turkishMap = {
-                    'ç': 'c', 'ğ': 'g', 'ı': 'i', 'ö': 'o', 'ş': 's', 'ü': 'u',
-                    'Ç': 'C', 'Ğ': 'G', 'İ': 'I', 'Ö': 'O', 'Ş': 'S', 'Ü': 'U'
-                };
-
-                const sanitize = (text) => {
-                    return text.split('').map(char => turkishMap[char] || char).join('')
-                        .replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
-                };
-
-                const safeName = sanitize(formData.nameSurname);
-                // Folder format: name_surname_DOCUMENTID
-                const folderName = `${safeName}_${applicationId}`;
+                // Folder format: name_surname_ID
+                const folderName = `${applicationId}`;
                 const fileName = `photo_${index + 1}_${Date.now()}.jpg`;
                 const storageRef = ref(storage, `applications/${folderName}/${fileName}`);
 

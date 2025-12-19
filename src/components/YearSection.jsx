@@ -176,6 +176,21 @@ const YearSection = ({ data }) => {
                                     </h4>
                                     <div className="space-y-1 text-center">
                                         {award.names.map((item, idx) => {
+                                            // Handle new structured format { country: "Turkey", label: "Female" }
+                                            if (item.country && item.label) {
+                                                const flag = getFlag(item.country);
+                                                return (
+                                                    <div key={idx} className="flex items-center justify-center gap-2">
+                                                        <p className="text-gray-300 flex items-center gap-2">
+                                                            <span className="text-gold text-sm font-bold uppercase tracking-wider">{item.label}</span>
+                                                            <span className="text-xl" title={item.country}>{flag}</span>
+                                                            <span className="text-sm text-gray-400">({item.country})</span>
+                                                        </p>
+                                                    </div>
+                                                );
+                                            }
+
+                                            // Fallback for older format
                                             const isObject = typeof item === 'object' && item !== null;
                                             const rawName = isObject ? item.name : item;
                                             const instagram = isObject ? item.instagram : null;
@@ -192,7 +207,7 @@ const YearSection = ({ data }) => {
                                             return (
                                                 <div key={idx} className="flex items-center justify-center gap-2">
                                                     <p className="text-gray-300 flex items-center gap-2">
-                                                        {flagStr && <span className="text-lg" title={match[2]}>{flagStr}</span>}
+                                                        {flagStr && <span className="text-lg" title={match ? match[2] : ''}>{flagStr}</span>}
                                                         {displayName}
                                                     </p>
                                                     {instagram && (

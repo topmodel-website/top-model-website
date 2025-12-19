@@ -27,15 +27,15 @@ export const universeData = [
             ]
         },
         mentions: [
-            { title: "Top Popularity (Winner)", names: [{ name: "Shannon (Suriname)", instagram: "https://www.instagram.com/shannonchotoe" }, "Juan Salazar (Venezuela)"] },
-            { title: "Top Model Universe Costume (Winner)", names: [{ name: "Maria Teresa Villanueva (Colombia)", instagram: "https://www.instagram.com/mariat_delahoz" }, { name: "Brandon Heredia (Mexico)", instagram: "https://www.instagram.com/brandnoises" }] },
-            { title: "Top Catwalk", names: [{ name: "Rafet Aliyev (Azerbaijan)", instagram: "https://www.instagram.com/rftalyf" }, { name: "Passaranun Maitreechharatwut (Thailand)", instagram: "https://www.instagram.com/yeyepsrn" }, { name: "Anano (Georgia)", instagram: "https://www.instagram.com/jibladzean" }] },
-            { title: "Top Promising", names: ["Victor (Georgia)", { name: "Kurti Megan (Albania)", instagram: "https://www.instagram.com/kurti_megan" }] },
-            { title: "Top Model Universe Africa", names: [{ name: "Graci Mel (Gabon)", instagram: "https://www.instagram.com/__graci_mel" }, { name: "Victor Obiaderi (Nigeria)", instagram: "https://www.instagram.com/youngchamp_227" }] },
-            { title: "Top Model Universe America", names: [{ name: "Tarsila Bueno (Brasil)", instagram: "https://www.instagram.com/tarsibueno" }, { name: "Brandon Heredia (Mexico)", instagram: "https://www.instagram.com/brandnoises" }] },
-            { title: "Top Model Universe Asia", names: [{ name: "Passaranun Maitreechharatwut (Thailand)", instagram: "https://www.instagram.com/yeyepsrn" }, { name: "Rafet Aliyev (Azerbaijan)", instagram: "https://www.instagram.com/rftalyf" }] },
-            { title: "Top Model Universe Europe", names: [{ name: "Valastro Graziana (Italia)", instagram: "https://www.instagram.com/ziana.v_" }, { name: "Jimmy Yves (France)", instagram: "https://www.instagram.com/jimmy.yvrs" }] },
-            { title: "Top Model Universe Mediterranean", names: [{ name: "Aslı Gül (North Cyprus)", instagram: "https://www.instagram.com/asliggulll" }, { name: "Noureddine Nadiri (Algeria)", instagram: "https://www.instagram.com/iamnoureddinenadiri" }] }
+            { title: "Top Popularity", names: [{ country: "Suriname", label: "Miss" }, { country: "Venezuela", label: "Mr" }] },
+            { title: "Top Model Universe Costume", names: [{ country: "Colombia", label: "Miss" }, { country: "Mexico", label: "Mr" }] },
+            { title: "Top Catwalk", names: [{ country: "Thailand", label: "Miss" }, { country: "Georgia", label: "Miss" }, { country: "Azerbaijan", label: "Mr" }] },
+            { title: "Top Promising", names: [{ country: "Albania", label: "Miss" }, { country: "Georgia", label: "Mr" }] },
+            { title: "Top Model Universe Africa", names: [{ country: "Gabon", label: "Miss" }, { country: "Nigeria", label: "Mr" }] },
+            { title: "Top Model Universe America", names: [{ country: "Brazil", label: "Miss" }, { country: "Mexico", label: "Mr" }] },
+            { title: "Top Model Universe Asia", names: [{ country: "Thailand", label: "Miss" }, { country: "Azerbaijan", label: "Mr" }] },
+            { title: "Top Model Universe Europe", names: [{ country: "Italy", label: "Miss" }, { country: "France", label: "Mr" }] },
+            { title: "Top Model Universe Mediterranean", names: [{ country: "North Cyprus", label: "Miss" }, { country: "Algeria", label: "Mr" }] }
         ]
     },
     {
@@ -63,7 +63,17 @@ export const universeData = [
                 { name: "Hariela Avdo", country: "Arnavutluk", title: "4th Runner Up", instagram: "https://www.instagram.com/hariela_a" }
             ]
         },
-
+        mentions: [
+            { title: "Best National Costume", names: [{ country: "Cameroon", label: "Miss" }, { country: "Thailand", label: "Mr" }] },
+            { title: "Best Formal Wear Award", names: [{ country: "Germany", label: "Miss" }, { country: "Pakistan", label: "Mr" }] },
+            { title: "Best Physique Award", names: [{ country: "North Cyprus", label: "Miss" }, { country: "India", label: "Mr" }] },
+            { title: "Best Face Award", names: [{ country: "India", label: "Miss" }, { country: "India", label: "Mr" }] },
+            { title: "Best Popularity Award", names: [{ country: "Germany", label: "Miss" }, { country: "Croatia", label: "Mr" }] },
+            { title: "Best in Interview Award", names: [{ country: "Turkey", label: "Miss" }, { country: "Philippines", label: "Mr" }] },
+            { title: "Best Personality Award", names: [{ country: "Algeria", label: "Miss" }, { country: "North Cyprus", label: "Mr" }] },
+            { title: "Best Photogenic Award", names: [{ country: "Ukraine", label: "Miss" }, { country: "Philippines", label: "Mr" }] },
+            { title: "Best Catwalk Award", names: [{ country: "Turkey", label: "Miss" }, { country: "India", label: "Mr" }] }
+        ]
     },
     {
         year: 2023,
@@ -91,7 +101,11 @@ export const universeData = [
                 { name: "Anjali Rahan", country: "Suriname", title: "3rd Runner Up", instagram: "https://www.instagram.com/anjali.rahan" }
             ]
         },
-
+        mentions: [
+            { title: "Catwalk Universe", names: [{ country: "Serbia", label: "Miss" }, { country: "Canada", label: "Mr" }] },
+            { title: "Universe Promising", names: [{ country: "France", label: "Miss" }, { country: "Portugal", label: "Mr" }] },
+            { title: "Best National Costume", names: [{ country: "Brazil", label: "Miss" }, { country: "Mexico", label: "Mr" }] }
+        ]
     },
     {
         year: 2022,
@@ -118,6 +132,12 @@ export const universeData = [
                 { name: "Stejsi", country: "Sırbistan", title: "4th Runner Up", instagram: "https://www.instagram.com/steeejsiiiii" }
             ]
         },
-
+        mentions: [
+            { title: "Top Physics", names: [{ country: "Uganda", label: "Miss" }, { country: "Afghanistan", label: "Mr" }] },
+            { title: "Top Face", names: [{ country: "Italy", label: "Miss" }, { country: "Montenegro", label: "Mr" }] },
+            { title: "Top Friendship", names: [{ country: "Moldova", label: "Miss" }, { country: "India", label: "Mr" }] },
+            { title: "Top Photomodel", names: [{ country: "Ukraine", label: "Miss" }, { country: "Iran", label: "Mr" }] },
+            { title: "Top Popularity", names: [{ country: "Hungary", label: "Miss" }, { country: "North Cyprus", label: "Mr" }] }
+        ]
     }
 ];
