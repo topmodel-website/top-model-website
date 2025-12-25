@@ -12,6 +12,7 @@ import Management from './pages/Management';
 import Gallery from './pages/Gallery';
 import Videos from './pages/Videos';
 import Contact from './pages/Contact';
+import Sponsors from './pages/Sponsors';
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                     <Route path="/gallery" element={<Gallery />} />
                     <Route path="/videos" element={<Videos />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/sponsors" element={<Sponsors />} />
                 </Routes>
             </Layout>
         </Router>

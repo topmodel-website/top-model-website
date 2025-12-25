@@ -13,7 +13,9 @@ const resources = {
                 media: "Medya",
                 gallery: "Fotoğraflar",
                 videos: "Videolar",
-                contact: "İletişim"
+                contact: "İletişim",
+                contactInfo: "İletişim Bilgileri",
+                sponsors: "Sponsorlar"
             },
             home: {
                 heroTitle: "Güzelliğin ve Zarafetin Zirvesi",
@@ -201,7 +203,9 @@ const resources = {
                 media: "Media",
                 gallery: "Photos",
                 videos: "Videos",
-                contact: "Contact"
+                contact: "Contact",
+                contactInfo: "Contact Info",
+                sponsors: "Sponsors"
             },
             home: {
                 heroTitle: "The Peak of Beauty & Grace",
