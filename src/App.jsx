@@ -13,6 +13,8 @@ import Gallery from './pages/Gallery';
 import Videos from './pages/Videos';
 import Contact from './pages/Contact';
 import Sponsors from './pages/Sponsors';
+import AdminLogin from './pages/Admin/AdminLogin';
+import AdminDashboard from './pages/Admin/AdminDashboard';
 
 function App() {
     return (
@@ -30,6 +32,8 @@ function App() {
                     <Route path="/videos" element={<Videos />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/sponsors" element={<Sponsors />} />
+                    <Route path="/admin" element={<AdminLogin />} />
+                    <Route path="/admin/dashboard" element={<AdminDashboard />} />
                 </Routes>
             </Layout>
         </Router>

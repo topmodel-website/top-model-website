@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Loader2, CheckCircle, AlertCircle, Upload, X, FileText, Info, ChevronDown, ChevronUp } from 'lucide-react';
 import { db, storage } from '../firebase';
-import { collection, doc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { collection, doc, setDoc, serverTimestamp, query, where, getDocs } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 import KvkkModal from '../components/KvkkModal';
 import { countryCodes } from '../data/countryCodes';
+import imageCompression from 'browser-image-compression';
 
 const Apply = () => {
     const { t } = useTranslation();
@@ -140,6 +141,39 @@ const Apply = () => {
             return;
         }
 
+        try {
+            // Check for duplicate application (Email or Phone)
+            const applicationsRef = collection(db, 'applications');
+            const formattedPhone = `${formData.countryCode} ${formData.phone}`;
+
+            // Check Email
+            const qEmail = query(applicationsRef, where("email", "==", formData.email));
+            const querySnapshotEmail = await getDocs(qEmail);
+            if (!querySnapshotEmail.empty) {
+                setStatus({ type: 'error', message: "Bu e-posta adresi ile daha önce başvuru yapılmış." });
+                setLoading(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+
+            // Check Phone
+            const qPhone = query(applicationsRef, where("phone", "==", formattedPhone));
+            const querySnapshotPhone = await getDocs(qPhone);
+            if (!querySnapshotPhone.empty) {
+                setStatus({ type: 'error', message: "Bu telefon numarası ile daha önce başvuru yapılmış." });
+                setLoading(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+
+        } catch (error) {
+            console.error("Duplicate check failed:", error);
+            // Proceed if check fails (optional, or block) - strict mode blocks
+            setStatus({ type: 'error', message: "Başvuru kontrolü sırasında bir hata oluştu. Lütfen tekrar deneyin." });
+            setLoading(false);
+            return;
+        }
+
         if (!formData.kvkkAccepted) {
             setStatus({ type: 'error', message: t('apply.messages.kvkkRequired') });
             setLoading(false);
@@ -170,12 +204,29 @@ const Apply = () => {
 
             // 1. Upload Photos to Firebase Storage (using Name_ID as folder)
             const photoUrls = await Promise.all(photos.map(async (photoObj, index) => {
+                // Compression Options
+                const options = {
+                    maxSizeMB: 1, // Max 1MB
+                    maxWidthOrHeight: 1920, // Max 1920px
+                    useWebWorker: true
+                };
+
+                let fileToUpload = photoObj.file;
+                try {
+                    // console.log(`Compressing photo ${index + 1}... Original size: ${fileToUpload.size / 1024 / 1024}MB`);
+                    const compressedFile = await imageCompression(photoObj.file, options);
+                    // console.log(`Compressed photo ${index + 1}. New size: ${compressedFile.size / 1024 / 1024}MB`);
+                    fileToUpload = compressedFile;
+                } catch (error) {
+                    console.error("Compression failed, using original file:", error);
+                }
+
                 // Folder format: name_surname_ID
                 const folderName = `${applicationId}`;
                 const fileName = `photo_${index + 1}_${Date.now()}.jpg`;
                 const storageRef = ref(storage, `applications/${folderName}/${fileName}`);
 
-                const snapshot = await uploadBytes(storageRef, photoObj.file);
+                const snapshot = await uploadBytes(storageRef, fileToUpload);
                 const downloadURL = await getDownloadURL(snapshot.ref);
                 return downloadURL;
             }));
