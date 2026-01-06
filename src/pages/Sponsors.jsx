@@ -5,16 +5,18 @@ import { useTranslation } from 'react-i18next';
 // List of sponsor images found in public/gallery/sponsor
 // Excludes PDFs as they cannot be rendered in img tags directly
 const sponsorImages = [
+    "Ekran Resmi 2026-01-06 13.12.08.png",
+
     "WhatsApp Image 2025-12-23 at 00.29.03 (1).jpeg",
     "WhatsApp Image 2025-12-23 at 00.29.03.jpeg",
-    "WhatsApp Image 2025-12-23 at 00.29.04 (1).jpeg",
+
     "WhatsApp Image 2025-12-23 at 00.29.04 (2).jpeg",
     "WhatsApp Image 2025-12-23 at 00.29.04 (3).jpeg",
     "WhatsApp Image 2025-12-23 at 00.29.04 (4).jpeg",
     "WhatsApp Image 2025-12-23 at 00.29.04.jpeg",
     "WhatsApp Image 2025-12-23 at 00.29.05 (1).jpeg",
     "WhatsApp Image 2025-12-23 at 00.29.05 (2).jpeg",
-    "WhatsApp Image 2025-12-23 at 00.29.05 (3).jpeg",
+
     "WhatsApp Image 2025-12-23 at 00.29.05 (4).jpeg",
     "WhatsApp Image 2025-12-23 at 00.29.05 (5).jpeg",
     "WhatsApp Image 2025-12-23 at 00.29.05 (6).jpeg",
@@ -61,7 +63,7 @@ const Sponsors = () => {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="bg-white/5 p-4 rounded-xl border border-white/10 hover:border-gold/50 transition-all duration-300 group"
                         >
-                            <div className="aspect-square flex items-center justify-center bg-white rounded-lg overflow-hidden p-4">
+                            <div className={`aspect-square flex items-center justify-center bg-white rounded-lg overflow-hidden ${img === "Ekran Resmi 2026-01-06 13.12.08.png" ? 'p-6' : 'p-4'}`}>
                                 <img
                                     src={`/gallery/sponsor/${img}`}
                                     alt={`Sponsor ${index + 1}`}
