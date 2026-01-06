@@ -50,7 +50,7 @@ const Sponsors = () => {
                         {t('nav.sponsors')}
                     </h1>
                     <p className="text-gray-400 max-w-2xl mx-auto mb-16 text-lg">
-                        {t('yearSection.specialAwards').replace('Özel Ödüller', '')} Our valued partners who support us in this journey.
+                        {t('sponsors.description')}
                     </p>
                 </motion.div>
 

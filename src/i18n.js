@@ -15,7 +15,11 @@ const resources = {
                 videos: "Videolar",
                 contact: "İletişim",
                 contactInfo: "İletişim Bilgileri",
+                contactInfo: "İletişim Bilgileri",
                 sponsors: "Sponsorlar"
+            },
+            sponsors: {
+                description: "Bu yolculukta bize destek olan değerli iş ortaklarımız."
             },
             home: {
                 heroTitle: "Güzelliğin ve Zarafetin Zirvesi",
@@ -205,7 +209,11 @@ const resources = {
                 videos: "Videos",
                 contact: "Contact",
                 contactInfo: "Contact Info",
+                contactInfo: "Contact Info",
                 sponsors: "Sponsors"
+            },
+            sponsors: {
+                description: "Our valued partners who support us in this journey."
             },
             home: {
                 heroTitle: "The Peak of Beauty & Grace",
