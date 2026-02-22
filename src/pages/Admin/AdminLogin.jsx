@@ -10,7 +10,7 @@ const AdminLogin = () => {
 
     // Hardcoded PIN for simplicity as requested
     // In a real production app with sensitive data, this should be backend-validated
-    const CORRECT_PIN = "1923";
+    const CORRECT_PIN = "1944";
 
     const handleSubmit = (e) => {
         e.preventDefault();
