@@ -25,6 +25,7 @@ const Home = () => {
                         loop
                         muted
                         playsInline
+                        preload="metadata"
                         className="w-full h-full object-cover"
                     >
                         <source src="/gallery/topmodel-video.mp4" type="video/mp4" />

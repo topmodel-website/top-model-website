@@ -105,8 +105,9 @@ const Videos = () => {
                                         muted
                                         loop
                                         playsInline
+                                        preload="none"
                                         onMouseOver={e => e.target.play()}
-                                        onMouseOut={e => e.target.pause()}
+                                        onMouseOut={e => { e.target.pause(); e.target.currentTime = 0; }}
                                         className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                     />
                                 ) : (

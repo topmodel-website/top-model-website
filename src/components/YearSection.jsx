@@ -9,7 +9,7 @@ const WinnerCard = ({ title, name, country, image }) => (
     <div className="bg-white/5 border border-gold/20 p-6 rounded-lg text-center hover:border-gold/50 transition-colors duration-300">
         <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-b from-gold/20 to-transparent flex items-center justify-center overflow-hidden">
             {image ? (
-                <img src={image} alt={name} className="w-full h-full object-cover" />
+                <img src={image} alt={name} loading="lazy" className="w-full h-full object-cover" />
             ) : (
                 <Trophy className="w-12 h-12 text-gold" />
             )}

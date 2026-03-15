@@ -67,6 +67,7 @@ const Sponsors = () => {
                                 <img
                                     src={`/gallery/sponsor/${img}`}
                                     alt={`Sponsor ${index + 1}`}
+                                    loading="lazy"
                                     className="max-w-full max-h-full object-contain filter group-hover:scale-110 transition-transform duration-300"
                                 />
                             </div>
