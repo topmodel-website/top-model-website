@@ -29,7 +29,7 @@ const Navbar = () => {
         { name: t('nav.home'), path: '/' },
         { name: t('nav.universe'), path: '/universe' },
         { name: t('nav.turkiye'), path: '/turkiye' },
-        { name: t('nav.apply'), path: '/apply' },
+        // { name: t('nav.apply'), path: '/apply' }, // Hidden as requested
         { name: t('nav.gallery'), path: '/gallery' },
         { name: t('nav.videos'), path: '/videos' },
         { name: t('nav.management'), path: '/management' },
